@@ -1,0 +1,15 @@
+.padre {
+  background-color: #fafafa;
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  /* IMPORTANTE */
+  text-align: center;
+}
+.hijo_uno {
+
+  /* IMPORTANTE */
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}

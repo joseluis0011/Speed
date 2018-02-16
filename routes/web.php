@@ -29,7 +29,8 @@ Route::get('perfil','PerfilController@index')->name('admin.perfil.index');
 Route::get('/','AdminController@index')->name('admin');
 });
 //user
-
+//Route::get('/','UserController@index')->name('user');
+//Route::get('pagos','PagosController@index')->name('user.pagos.index');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

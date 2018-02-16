@@ -215,7 +215,7 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
 
 <div class="container">
   <div class="section">
-   @foreach($posts as $post)
+  <!-- @foreach($posts as $post)
     <div class="row">
       <div class="col s12 center">
         <h3><i class="mdi-content-send brown-text"></i></h3>
@@ -223,7 +223,7 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
         <p class="left-align light"> {{$post->body}} </p>
       </div>
     </div>
-  @endforeach
+  @endforeach -->
       <form class="col s12">
         <div class="row">
           <div class="input-field col s6">

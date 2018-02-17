@@ -18,6 +18,17 @@
       <a id="logo-container" href="#" class="brand-logo">{{config('app.name')}}</a>
       <ul class="right hide-on-med-and-down">
         <li> <a class="waves-effect waves-light btn modal-trigger" href="{{route('login')}}">Ingresar</a></li>
+        @if(auth()->check())
+        <li>{{auth()->user()->nombre}}</li>
+        @endif
+        <li>
+          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+            Salir
+          </a>
+        </li>
+        <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+        </form>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -215,15 +226,6 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
 
 <div class="container">
   <div class="section">
-   @foreach($posts as $post)
-    <div class="row">
-      <div class="col s12 center">
-        <h3><i class="mdi-content-send brown-text"></i></h3>
-        <h4> {{$post->title}} </h4>
-        <p class="left-align light"> {{$post->body}} </p>
-      </div>
-    </div>
-  @endforeach
       <form class="col s12">
         <div class="row">
           <div class="input-field col s6">

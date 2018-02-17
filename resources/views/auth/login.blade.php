@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!--================================================================================
-	Item Name: Materialize - Material Design Admin Template
-	Version: 1.0
-	Author: GeeksLabs
-	Author URL: http://www.themeforest.net/user/geekslabs
-================================================================================ -->
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -61,15 +53,15 @@
           </div>
         </div>
         <div class="row margin">
-          <div class="input-field col s12{{ $errors->has('email') ? ' has-error' : '' }}">
+          <div class="input-field col s12{{ $errors->has('dni') ? ' has-error' : '' }}">
             <i class="mdi-social-person-outline prefix"></i>
-            <input  type="email" class="validate" name="email" value="{{ old('email') }}" required autofocus>
-            @if ($errors->has('email'))
+            <input  type="text" class="validate" name="dni" value="{{ old('dni') }}" required autofocus>
+            @if ($errors->has('dni'))
                 <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
+                    <strong>{{ $errors->first('dni') }}</strong>
                 </span>
             @endif
-            <label for="username" class="center-align">Email</label>
+            <label for="dni" class="center-align">DNI</label>
           </div>
         </div>
         <div class="row margin">

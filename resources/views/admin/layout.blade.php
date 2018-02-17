@@ -85,7 +85,7 @@
                                 <img src="{{asset('resources/images/avatar.jpg')}}" alt="" class="circle responsive-img valign profile-image">
                             </div>
                             <div class="col col s8 m8 l8">
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" >{{auth()->user()->name}}</a>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" >{{auth()->user()->nombre}}</a>
                                 <p class="user-roal">Administrator</p>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                     <li class="li-hover"><div class="divider"></div></li>
                     <li class="li-hover"><p class="ultra-small margin more-text">MORE</p></li>
                     <li class="li-hover"><div class="divider"></div></li>
-                    <li class="li-hover"><p class="ultra-small margin more-text">Daily Sales</p></li>
+                    <li class="li-hover"><p class="ultra-small margin more-text">Daily es</p></li>
                     <li class="li-hover">
                         <div class="row">
                             <div class="col s12 m12 l12">

@@ -85,8 +85,8 @@
                                 <img src="{{asset('resources/images/avatar.jpg')}}" alt="" class="circle responsive-img valign profile-image">
                             </div>
                             <div class="col col s8 m8 l8">
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" >{{auth()->user()->name}}</a>
-                                <p class="user-roal">Usuario</p>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" >{{auth()->user()->nombre}}</a>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" >{{auth()->user()->persona[0]->direccion}}</a>
                             </div>
                         </div>
                     </li>

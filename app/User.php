@@ -14,16 +14,17 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $table = 'usuario';
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+    protected $primaryKey = 'idusuario';
+
+    public $timestamps = false;
+
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function Persona(){
+     return $this->hasMany('App\Persona','usuario_idusuario');
+    }
 }

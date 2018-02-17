@@ -13,7 +13,7 @@
 
 Route::get('/', 'PagesController@home');
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'admin'],function(){
 Route::get('posts','PostsController@index')->name('admin.posts.index');
 Route::get('notificaciones/password','PasswordController@index')->name('admin.notificaciones.password.index');
 Route::get('notificaciones/reclamos','ReclamosController@index')->name('admin.notificaciones.reclamos.index');

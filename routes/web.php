@@ -13,20 +13,20 @@
 
 Route::get('/', 'PagesController@home');
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'admin'],function(){
-    Route::get('posts','PostsController@index')->name('admin.posts.index');
-    Route::get('notificaciones/password','PasswordController@index')->name('admin.notificaciones.password.index');
-    Route::get('notificaciones/reclamos','ReclamosController@index')->name('admin.notificaciones.reclamos.index');
-    Route::get('notificaciones/buzon','BuzonController@index')->name('admin.notificaciones.buzon.index');
-    Route::get('notificaciones/portal','PortalController@index')->name('admin.notificaciones.portal.index');
-    Route::get('clientes','RegClientController@index')->name('admin.clientes.index');
-    Route::get('clientes/create','RegClientController@create')->name('admin.clientes.create');
-    Route::get('administrador','RegAdminController@index')->name('admin.administrador.index');
-    Route::get('administrador/create','RegAdminController@create')->name('admin.administrador.create');
-    Route::get('pagos','PagosController@index')->name('admin.pagos.index');
-    Route::get('pagos/create','PagosController@create')->name('admin.pagos.create');
-    Route::get('perfil','PerfilController@index')->name('admin.perfil.index');
-    Route::get('/','AdminController@index')->name('admin');
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'auth'],function(){
+Route::get('posts','PostsController@index')->name('admin.posts.index');
+Route::get('notificaciones/password','PasswordController@index')->name('admin.notificaciones.password.index');
+Route::get('notificaciones/reclamos','ReclamosController@index')->name('admin.notificaciones.reclamos.index');
+Route::get('notificaciones/buzon','BuzonController@index')->name('admin.notificaciones.buzon.index');
+Route::get('notificaciones/portal','PortalController@index')->name('admin.notificaciones.portal.index');
+Route::get('clientes','RegClientController@index')->name('admin.clientes.index');
+Route::get('clientes/create','RegClientController@create')->name('admin.clientes.create');
+Route::get('administrador','RegAdminController@index')->name('admin.administrador.index');
+Route::get('administrador/create','RegAdminController@create')->name('admin.administrador.create');
+Route::get('pagos','PagosController@index')->name('admin.pagos.index');
+Route::get('pagos/create','PagosController@create')->name('admin.pagos.create');
+Route::get('perfil','PerfilController@index')->name('admin.perfil.index');
+Route::get('/','AdminController@index')->name('admin');
 });
 //-------------------------- routes user cliente auth-------------------------------------
 

@@ -17,37 +17,38 @@
 @section('content')
   <!--DataTables example-->
   <div id="table-datatables">
-    <h4 class="header">Lista de Post</h4>
     <div class="row">
+      <h4 class="header">Home Content</h4>
       <div class="col s12">
-        <table id="data-table-simple" class="responsive-table display" cellspacing="0">
-          <thead>
-              <tr>
-                  <th>Titulo</th>
-                  <th>Cuerpo</th>
-                  <th>Editar</th>
-              </tr>
-          </thead>
+        <form method="post" action="{{route('saveData')}}">
+          {{csrf_field()}}
+          <input type="hidden" name="part" value="1">
+          <textarea name="body" id="editor2">
+            {{$body[0]->body}}
+          </textarea>
+        </form>
 
-          <tfoot>
-              <tr>
-                <th>Titulo</th>
-                <th>Cuerpo</th>
-                <th>Editar</th>
-              </tr>
-          </tfoot>
+      </div>
+    </div>
+    <div class="row">
+      <h4 class="header">Page Content</h4>
+      <div class="col s12">
+        <form method="post" action="{{route('saveData')}}">
+          {{csrf_field()}}
+          <input type="hidden" name="part" value="2">
+          <textarea name="body" id="editor">
+            {{$body[1]->body}}
+          </textarea>
+        </form>
 
-          <tbody>
-            @foreach($posts as $post)
-              <tr>
-                <td>{{$post->title}}</td>
-                <td>{{$post->body}}</td>
-                <td>  <a type="submit" class="btn-floating btn-large waves-effect waves-light " ><i class="mdi-content-create"></i></a></td>
-              </tr>
-            @endforeach
-          </tbody>
-        </table>
       </div>
     </div>
   </div>
-@endsection 
+@endsection
+@section('script')
+    <script src="{{asset('js/plugins/ckeditor/ckeditor.js')}}"></script>
+    <script>
+        CKEDITOR.replace('editor');
+        CKEDITOR.replace('editor2');
+    </script>
+@endsection

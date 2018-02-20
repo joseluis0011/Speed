@@ -25,17 +25,18 @@
       <!-- Form with validation -->
       <div class="col s12 " >
           <div class="row">
-            <form class="col s12" method="post" action="regadmin">
+            <form method="POST" class="col s12"  action="{{route('changePassword')}}">
+              {{ csrf_field() }}
               <div class="row">
                 <div class="input-field col s4">
-                  <i class="mdi-action-account-circle prefix"></i>
-                  <input  type="text" class="validate">
-                  <label for="first_name">Email</label>
+                  <i class="mdi-action-account-child prefix"></i>
+                  <input name="password"  type="password" class="validate">
+                  <label for="az">Contraseña Actual</label>
                 </div>
                 <div class="input-field col s4">
                   <i class="mdi-action-account-child prefix"></i>
-                  <input  type="password" class="validate">
-                  <label for="az">Contraseña</label>
+                  <input name="new_password"  type="password" class="validate">
+                  <label for="az">Nueva Contraseña</label>
                 </div>
 
               </div>
@@ -43,7 +44,7 @@
               <br>
               <div class="row">
                 <div class="col s12 center">
-                  <button class="btn cyan waves-effect waves-light" type="submit" name="action">Cambiar
+                  <button class="btn cyan waves-effect waves-light" type="submit">Cambiar
                     <i class="mdi-content-send right"></i>
                   </button>
                 </div>

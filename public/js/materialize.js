@@ -296,6 +296,7 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
       }function p() {
         for (var t = 0; b > t; ++t) {
           w[t] = l(t * x, e, a);
+
         }
       }function f(t, r, n) {
         var o,

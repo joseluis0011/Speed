@@ -41,7 +41,7 @@
   <div class="slider">
     <ul class="slides">
       <li>
-        <img src="img/antenas1.jpg" style="wich"> <!-- random image -->
+        <img src="img/antenas1.jpg" > <!-- random image -->
         <div class="caption center-align">
           <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
@@ -76,35 +76,7 @@
     <div class="section">
 
       <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Quienes Somos</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Servicios</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Atencion</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
+      {!! $body[0]->body !!}
     </div>
   </div>
 
@@ -224,36 +196,45 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
 </div>
 
 
+  <div class="container">
+    <div class="row">
+      <div class="col s12 center">
+      {!! $body[1]->body !!}
+      </div>
+    </div>
+  </div>
+
 <div class="container">
   <div class="section">
-      <form class="col s12">
+    <form method="POST" class="col s12"  action="{{route('newCliente')}}">
+      {{ csrf_field() }}
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="icon_prefix" type="text" class="validate">
+            <input name="name" id="icon_prefix" type="text" class="validate">
             <label for="icon_prefix">Nombre</label>
           </div>
           <div class="input-field col s6">
             <i class="material-icons prefix">supervisor_account</i>
-            <input id="icon_telephone" type="text" class="validate">
+            <input name="apellido" id="icon_telephone" type="text" class="validate">
             <label for="icon_telephone">Apellido</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">phone</i>
-            <input id="icon_prefix" type="text" class="validate">
+            <input name="phone" id="icon_prefix" type="text" class="validate">
             <label for="icon_prefix">Telefono 0 Celular</label>
           </div>
           <div class="input-field col s6">
             <i class="material-icons prefix">contacts</i>
-            <input id="icon_telephone" type="text" class="validate">
+            <input name="direccion" id="icon_telephone" type="text" class="validate">
             <label for="icon_telephone">Direccion</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <select>
+            <select name="tplan">
               <option value="" disabled selected>Eliga el Plan</option>
               <option value="1">Plan 35</option>
               <option value="2">Plan 40</option>
@@ -265,10 +246,11 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
             <label>Eliga el Plan a Contratar</label>
           </div>
           <div class="input-field col s6">
-            <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
+            <textarea name="coment" id="textarea1" class="materialize-textarea" data-length="120"></textarea>
             <label for="textarea1">Comentario</label>
           </div>
         </div>
+      <button type="submit" class="btn">Enviar</button>
       </form>
     </div>
   </div>

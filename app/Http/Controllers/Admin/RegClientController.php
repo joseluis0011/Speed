@@ -2,19 +2,37 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Repo\AdminRepo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Session;
 
 class RegClientController extends Controller
 {
-  public function index()
-  {
+    protected $repo_admin;
+    public function __construct(AdminRepo $repo)
+    {
+        $this->repo_admin = $repo;
+    }
 
-    return view('admin.clientes.index');
+    public function index()
+  {
+     $cli = $this->repo_admin->listClienteByAdmin();
+       return view('admin.clientes.index',compact('cli'));
   }
   public function create()
   {
-
     return view('admin.clientes.create');
+  }
+
+  public function newuser(Request $request){
+     $user = $this->repo_admin->createUserByadmin($request);
+      if($this->repo_admin->createClienteByAdmin($request,$user->idusuario)!=null){
+          Session::flash('cli_new','Creado correctamente');
+          return back();
+      }else{
+          Session::flash('cli_new_error','Error no se pudo crear el cliente');
+          return back();
+      }
   }
 }

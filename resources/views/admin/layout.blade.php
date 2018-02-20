@@ -177,14 +177,13 @@
        <script type="text/javascript" src="{{asset('resources/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 
 
-       <!-- chartist -->
+
        <script type="text/javascript" src="{{asset('resources/js/plugins/chartist-js/chartist.min.js')}}"></script>
 
-       <!-- chartjs -->
+
        <script type="text/javascript" src="{{asset('resources/js/plugins/chartjs/chart.min.js')}}"></script>
        <script type="text/javascript" src="{{asset('resources/js/plugins/chartjs/chart-script.js')}}"></script>
 
-       <!-- sparkline -->
        <script type="text/javascript" src="{{asset('resources/js/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
        <script type="text/javascript" src="{{asset('resources/js/plugins/sparkline/sparkline-script.js')}}"></script>
 
@@ -198,6 +197,55 @@
 
        <!--plugins.js - Some Specific JS codes for Plugin Settings-->
        <script type="text/javascript" src="{{asset('resources/js/plugins.js')}}"></script>
+       @include('admin.partials.message')
+    @yield('script')
+
+       <script>
+           $(document).ready(function () {
+               var nnt = 0,nnt2 = 0,nntg = 0;
+               var url = '{{route('getnewnotify')}}';
+               $.get('{{route('getBuzon')}}',function (data) {
+                   nntg =  data.length;
+                   if(data.length>0){
+                       for(var i = 0; i<= data.length;i++){
+                           $('#typenoty_3').show();
+                           $('#typenoty_3').text(i)
+                       }
+                   }else{
+                       $('#typenoty_3').removeClass();
+                   }
+
+               });
+               $.get(url,function (data) {
+                    nntg = nntg + data.length;
+                   if(data != null && nntg >0){
+                       $('#view_count_notify').text(nntg);
+                       $.each(data,function (i,d) {
+                           if(d.typenoti === "1"){
+                                nnt = nnt +1;
+                               $('#typenoty_1').show();
+                               $('#typenoty_1').text(nnt)
+                           }else if(d.typenoti === "2"){
+                               nnt2 = nnt2 +1;
+                               $('#typenoty_2').show();
+                               $('#typenoty_2').text(nnt2)
+                           }
+                       })
+
+                   }else{
+                       $('#view_count_notify').removeClass();
+                       $('#typenoty_1').removeClass();
+                       $('#typenoty_2').removeClass();
+                   }
+               });
+           })
+
+           function view(id) {
+               $.get('{{route('updateview')}}?idusuario='+id,function (data) {
+                   location.reload(true);
+               });
+           }
+       </script>
    </body>
 
    </html>

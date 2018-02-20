@@ -30,19 +30,20 @@
       <!-- Form with validation -->
       <div class="col s12 " >
           <div class="row">
-            <form class="col s12">
+            <form method="POST" class="col s12"  action="{{route('newpago')}}">
+              {{ csrf_field() }}
               <div class="row">
                 <div class="input-field col s6">
-                  <select>
+                  <select name="idpersona">
                     <option value="" disabled selected>Eliga el Usuario</option>
-                    <option value="1">Usuario 1</option>
-                    <option value="2">Usuario 2</option>
-                    <option value="3">Usuario 3</option>
+                    @foreach($cli as $cl)
+                      <option class="badge-dni" value="{{$cl->idpersona}}">{{$cl->user->nombre}} -- DNI -- {{$cl->user->dni}}</option>
+                    @endforeach
                   </select>
                   <label>Usuario</label>
                 </div>
                 <div class="input-field col s6">
-                  <select>
+                  <select name="mes">
                     <option value="" disabled selected>Eliga el Mes</option>
                     <option value="1">Enero</option>
                     <option value="2">Febrero</option>
@@ -63,7 +64,7 @@
               </div>
               <div class="row">
                 <div class="input-field col s6">
-                  <select>
+                  <select name="monto">
                     <option value="" disabled selected>Eliga el Monto</option>
                     <option value="1">S/.25</option>
                     <option value="2">S/.30</option>

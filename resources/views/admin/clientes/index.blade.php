@@ -46,8 +46,6 @@
                   <th>IP.Antena</th>
                   <th>Tipo de Antena</th>
                   <th>Plan</th>
-                  <th>Usuario</th>
-                  <th>Clave</th>
                   <th>Estado</th>
                   <th>Acciones</th>
               </tr>
@@ -64,15 +62,31 @@
                 <th>IP.Antena</th>
                 <th>Tipo de Antena</th>
                 <th>Plan</th>
-                <th>Usuario</th>
-                <th>Clave</th>
                 <th>Estado</th>
                 <th>Acciones</th>
               </tr>
           </tfoot>
 
           <tbody>
-
+            @foreach($cli as $cl)
+                <tr>
+                    <td>{{$cl->user->nombre}}</td>
+                    <td>{{$cl->user->dni}}</td>
+                    <td>{{$cl->direccion}}</td>
+                    <td>{{$cl->telefono}}</td>
+                    <td>{{$cl->finicio}}</td>
+                    <td>{{$cl->router}}</td>
+                    <td>{{$cl->antena}}</td>
+                    <td>{{$cl->tantena}}</td>
+                    <td>{{$cl->plan}}</td>
+                    <td>{{($cl->estado == 1)?'Activo':'Inactivo'}}</td>
+                    <td>
+                        <a class="  btn-success">Edid</a>
+                        <a class="  btn-danger">view</a>
+                        <a class="  btn-info">Deñlete</a>
+                    </td>
+                </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

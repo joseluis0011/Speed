@@ -55,7 +55,19 @@
             </tfoot>
 
             <tbody>
-
+            @foreach($pay as $pa)
+              <tr>
+                <td>{{$pa->persona->user->nombre}} {{$pa->persona->user->apellido}}</td>
+                <td>{{$pa->mes}}</td>
+                <td>{{$pa->monto}}</td>
+                <td>{{$pa->comentario}}</td>
+                <td>
+                  <a href="#">edit</a>
+                  <a href="#">delete</a>
+                  <a href="#">view</a>
+                </td>
+              </tr>
+            @endforeach
             </tbody>
           </table>
         </div>

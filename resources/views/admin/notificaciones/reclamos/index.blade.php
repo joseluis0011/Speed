@@ -44,7 +44,26 @@
           </tfoot>
 
           <tbody>
-
+          @foreach($noti as $not)
+              @if($not->view == 'no')
+                  <tr style="background: #FEA47F;">
+              @else
+                  <tr style="background: #9AECDB;">
+                      @endif
+                      <td>{{$not->persona->user->nombre}} {{$not->persona->user->apellido}}</td>
+                      <td>{{$not->persona->user->dni}}</td>
+                      <td>{{$not->reclamo}}</td>
+                      <td>{{$not->comentario}}</td>
+                      <td>
+                          @if($not->view == 'no')
+                              <a onclick="view('{{$not->idnotificaciones}}')" class="btn">view</a>
+                          @else
+                              <a href="#" >Edit</a>
+                              <a href="#" >Delete</a>
+                          @endif
+                      </td>
+                  </tr>
+                  @endforeach
           </tbody>
         </table>
       </div>

@@ -40,8 +40,8 @@
                   <th>Nombre</th>
                   <th>Apellido</th>
                   <th>Telefono</th>
-                  <th>Usuario</th>
-                  <th>Clave</th>
+                  <th>DNI</th>
+                  <th>Email</th>
 
               </tr>
           </thead>
@@ -51,13 +51,21 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Telefono</th>
-                <th>Usuario</th>
-                <th>Clave</th>
+                <th>DNI</th>
+                <th>Email</th>
               </tr>
           </tfoot>
-
           <tbody>
+          @foreach($admin as $ad)
+            <tr>
+              <td>{{$ad->user->nombre}}</td>
+              <td>{{$ad->user->apellido}}</td>
+              <td>{{$ad->telefono}}</td>
+              <td>{{$ad->user->dni}}</td>
+              <td>{{$ad->email}}</td>
 
+            </tr>
+          @endforeach
           </tbody>
         </table>
       </div>

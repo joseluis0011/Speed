@@ -15,9 +15,11 @@ class isAdmin
      * @return mixed
      */
     public function handle($request, Closure $next){
-        if (Auth::user()->persona[0]->typeuser == 1) {
-            return $next($request);
+        if(Auth::check()){
+            if (Auth::user()->persona[0]->typeuser == 1) {
+                return $next($request);
+            }
         }
-        return redirect('/');
+        return redirect('/user');
     }
 }

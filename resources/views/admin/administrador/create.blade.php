@@ -30,7 +30,9 @@
       <!-- Form with validation -->
       <div class="col s12 " >
           <div class="row">
-            <form class="col s12" method="post" action="regadmin">
+            <form method="POST" class="col s12"  action="{{route('newuser')}}">
+              {{ csrf_field() }}
+              <input type="hidden" name="token_admin" value="1">
               <div class="row">
                 <div class="input-field col s4">
                   <i class="mdi-action-account-circle prefix"></i>
@@ -55,6 +57,12 @@
                   <label for="password">Email</label>
                 </div>
                 <div class="input-field col s6">
+                  <i class="mdi-hardware-keyboard-alt prefix"></i>
+                  <input  name="dni" type="text" class="validate">
+                  <label for="password">DNI</label>
+                </div>
+
+                <div class="input-field col s6">
                   <i class="mdi-action-lock prefix"></i>
                   <input  name="password" type="password" class="validate">
                   <label for="password">Password<</label>
@@ -63,7 +71,7 @@
               <br>
               <div class="row">
                 <div class="col s12 center">
-                  <button class="btn cyan waves-effect waves-light" type="submit" name="action">Agregar
+                  <button class="btn cyan waves-effect waves-light" type="submit">Agregar
                     <i class="mdi-content-send right"></i>
                   </button>
                 </div>

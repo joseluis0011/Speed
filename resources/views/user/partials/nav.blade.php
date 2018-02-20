@@ -30,8 +30,6 @@
                     </li>
                     <li {{request()->is('admin/notificaciones/buzon')?'class=active':''}}><a href="{{route('admin.notificaciones.buzon.index')}}">buzon de entrada</a>
                     </li>
-                    <li {{request()->is('admin/notificaciones/portal')?'class=active':''}}><a href="{{route('admin.notificaciones.portal.index')}}">C. contraseña Portal</a>
-                    </li>
                 </ul>
             </div>
         </li>
@@ -39,7 +37,14 @@
         </li>
         <li class="bold {{request()->is('admin/posts')?'active':''}}"><a href="{{route('admin.posts.index')}}" class="waves-effect waves-cyan"><i class="mdi-content-create"></i>Editar Post</a>
         </li>
-        <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-action-settings-power"></i> Salir</a>
+        <li class="bold">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="waves-effect waves-cyan"><i class="mdi-action-settings-power"></i>
+                Salir
+            </a>
         </li>
+
+        <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
     </ul>
 </li>

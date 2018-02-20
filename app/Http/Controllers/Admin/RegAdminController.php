@@ -2,14 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Repo\AdminRepo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Session;
 class RegAdminController extends Controller
 {
-  public function index()
-  {
+    protected  $repo_admin;
+    public function __construct(AdminRepo $repo)
+    {
+        $this->repo_admin = $repo;
+    }
 
-    return view('admin.administrador.index');
+    public function index()
+  {
+     $admin =  $this->repo_admin->listAdmin();
+    return view('admin.administrador.index',compact('admin'));
+
   }
   public function create()
   {

@@ -10,61 +10,66 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/login.css" type="text/css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 </head>
 <body>
   <div class="navbar-fixed">
-  <nav class="#c5e1a5 light-green lighten-3" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">{{config('app.name')}}</a>
-      <ul class="right hide-on-med-and-down">
-        <li> <a class="waves-effect waves-light btn modal-trigger" href="{{route('login')}}">Ingresar</a></li>
+  <nav  role="navigation" style="background: rgba(52, 73, 94,0.7);">
+    <a id="logo-container" href="#" class="brand-logo" style="font-family: 'Great Vibes', cursive;">{{config('app.name')}}<i class="large material-icons" style="font-size: 50px;">network_check</i></a>
+    <div class="nav-wrapper container" >
+      <ul class="right hide-on-med-and-down" >
+        <li> <a class="waves-effect waves-light" href="{{route('login')}}"><i class="material-icons">account_circle</i></a></li>
         @if(auth()->check())
         <li>{{auth()->user()->nombre}}</li>
+          <li>
+
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+              <i class="material-icons">exit_to_app</i>
+            </a>
+          </li>
         @endif
-        <li>
-          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-            Salir
-          </a>
-        </li>
         <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
           {{ csrf_field() }}
         </form>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Ingresar</a></li>
+        <li><a href="login">Ingresar</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 </div>
-  <div class="slider">
-    <ul class="slides">
+  <div class="slider" style="margin-top: -63px;">
+    <ul class="slides" >
+      <li>
+        <img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/25/126849-network-computer-switch-wire-data_center-748x421.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h2>Welcome Speed-Networck</h2>
+          <h3 class="light grey-text text-lighten-3">Y al menorp recio.</h3>
+        </div>
+      </li>
+
+       <li>
+        <img src="https://wallpaperscraft.com/image/squares_shape_light_85528_1920x1080.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h2>Navega en altas velocidades </h2>
+          <h3 class="light grey-text text-lighten-3">Y al menorp recio.</h3>
+        </div>
+      </li>
+
+      <li>
+        <img src="https://prd-www-cdn.ubnt.com/media/images/homepage-hero/GPON-Technology-Platform-bg.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h2>Welcome Speed-Networck </h2>
+          <h3 class="light grey-text text-lighten-3">Here's our small slogan.</h3>
+        </div>
+      </li>
+
       <li>
         <img src="img/antenas1.jpg" > <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="img/antenas.jpg" > <!-- random image -->
         <div class="caption left-align">
           <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="img/antenas4.png"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
-        <img src="img/antenas2.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
         </div>
       </li>
@@ -301,7 +306,9 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
   <script src="js/init.js"></script>
 <script>
   $(document).ready(function(){
-     $('.slider').slider();
+     $('.slider').slider({
+       height: 650
+     });
       $('.modal').modal();
        $('select').material_select();
    });

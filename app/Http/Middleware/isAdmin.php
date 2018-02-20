@@ -19,7 +19,8 @@ class isAdmin
             if (Auth::user()->persona[0]->typeuser == 1) {
                 return $next($request);
             }
+            return redirect('/user');
         }
-        return redirect('/user');
+        return redirect('/login');
     }
 }

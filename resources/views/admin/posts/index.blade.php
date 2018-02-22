@@ -45,7 +45,7 @@
     </div>
   </div>
 @endsection
-@section('script')
+@section('script_top')
     <script src="{{asset('js/plugins/ckeditor/ckeditor.js')}}"></script>
     <script>
         CKEDITOR.replace('editor');

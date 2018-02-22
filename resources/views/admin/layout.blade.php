@@ -1,251 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
-    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
     <title>SpeedTest</title>
-
-    <!-- Favicons-->
-    <link rel="icon" href="{{asset('resources/images/favicon/favicon-32x32.png')}}" sizes="32x32">
-    <!-- Favicons-->
-    <link rel="apple-touch-icon-precomposed" href="{{asset('resources/images/favicon/apple-touch-icon-152x152.png')}}">
-    <!-- For iPhone -->
-    <meta name="msapplication-TileColor" content="#00bcd4">
-    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-    <!-- For Windows Phone -->
-
-
-    <!-- CORE CSS-->
-    <link href="{{asset('resources/css/materialize.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="{{asset('resources/css/style.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-
-
-    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
-    <link href="{{asset('resources/js/plugins/perfect-scrollbar/perfect-scrollbar.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="{{asset('resources/js/plugins/jvectormap/jquery-jvectormap.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="{{asset('resources/js/plugins/chartist-js/chartist.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
-    <link href="{{asset('resources/css/prism.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="{{asset('resources/js/plugins/perfect-scrollbar/perfect-scrollbar.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="{{asset('resources/js/plugins/data-tables/css/jquery.dataTables.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="{{asset('resources/js/plugins/chartist-js/chartist.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="{{asset('assets/bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/bower_components/dropzone/dist/dropzone.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/bower_components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/bower_components/slick-carousel/slick/slick.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/main4a76.css?version=4.3.0')}}" rel="stylesheet">
+    <link href="{{asset('icon_fonts_assets/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet">
 </head>
-
-<body>
-    <!-- Start Page Loading -->
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-    <!-- End Page Loading -->
-
-    <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-    <!-- START HEADER -->
-    <header id="header" class="page-topbar">
-        <!-- start header nav-->
-        <div class="navbar-fixed">
-            <nav class="grey darken-3">
-                <div class="nav-wrapper">
-                    <h1 class="logo-wrapper"><a href="{{route('admin')}}" class="brand-logo darken-1"><img src="{{asset('resources/images/materialize-logo.png')}}" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1>
-                    <ul class="right hide-on-med-and-down">
-                        <li class="search-out">
-                            <input type="text" class="search-out-text">
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>
-                        </li>
-                    </ul>
+<body class="menu-position-side menu-side-left full-screen">
+<div class="all-wrapper solid-bg-all">
+    <div class="layout-w">
+<!--------------------
+START - Mobile Menu
+-------------------->
+        <div class="menu-mobile menu-activated-on-click color-scheme-dark">
+            <div class="mm-logo-buttons-w"><a class="mm-logo" href="/">
+                    <img src="/assets/img/logo.png"><span>SpeedTest</span></a>
+                <div class="mm-buttons">
+                    <div class="content-panel-open">
+                        <div class="os-icon os-icon-grid-circles"></div>
+                    </div>
+                    <div class="mobile-menu-trigger">
+                        <div class="os-icon os-icon-hamburger-menu-1"></div>
+                    </div>
                 </div>
-            </nav>
+            </div>
+            <div class="menu-and-user">
+                <div class="logged-user-w">
+                    <div class="avatar-w"><img alt="" src="/assets/img/avatar1.jpg"></div>
+                    <div class="logged-user-info-w">
+                        <div class="logged-user-name">{{auth()->user()->nombre}}</div>
+                        <div class="logged-user-role">Administrator</div>
+                    </div>
+                </div>
+<!--------------------
+START - Mobile Menu List
+-------------------->
+
+            @include('admin.partials.menu-phone')
+<!--------------------
+END - Mobile Menu List
+-------------------->
+
+            </div>
         </div>
-        <!-- end header nav-->
-    </header>
-    <!-- END HEADER -->
-
-    <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-    <!-- START MAIN -->
-    <div id="main">
-        <!-- START WRAPPER -->
-        <div class="wrapper">
-
-            <!-- START LEFT SIDEBAR NAV-->
-            <aside id="left-sidebar-nav">
-                <ul id="slide-out" class="side-nav fixed leftside-navigation">
-                    <li class="user-details cyan darken-2">
-                        <div class="row">
-                            <div class="col col s4 m4 l4">
-                                <img src="{{asset('resources/images/avatar.jpg')}}" alt="" class="circle responsive-img valign profile-image">
-                            </div>
-                            <div class="col col s8 m8 l8">
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" >{{auth()->user()->nombre}}</a>
-                                <p class="user-roal">Administrator</p>
+<!--------------------
+END - Mobile Menu
+-------------------->
+<!--------------------
+START - Main Menu
+-------------------->
+        <div class="menu-w selected-menu-color-light menu-has-selected-link menu-activated-on-click color-scheme-light color-style-default sub-menu-color-light menu-position-side menu-side-left menu-layout-full sub-menu-style-inside">
+            <div class="logo-w">
+                <a class="logo" href="/admin">
+                    <div class="logo-element"></div>
+                    <div class="logo-label">SpeedTest</div>
+                </a></div>
+            <div class="logged-user-w avatar-inline">
+                <div class="logged-user-i">
+                    <div class="avatar-w"><img alt="" src="/assets/img/avatar1.jpg"></div>
+                    <div class="logged-user-info-w">
+                        <div class="logged-user-name">{{auth()->user()->nombre}} {{auth()->user()->apellido}}</div>
+                        <div class="logged-user-role">Administrator</div>
+                    </div>
+                    <div class="logged-user-toggler-arrow">
+                        <div class="os-icon os-icon-chevron-down"></div>
+                    </div>
+                    <div class="logged-user-menu color-style-bright">
+                        <div class="logged-user-avatar-info">
+                            <div class="avatar-w"><img alt="" src="/assets/img/avatar1.jpg"></div>
+                            <div class="logged-user-info-w">
+                                <div class="logged-user-name">{{auth()->user()->nombre}} {{auth()->user()->apellido}}</div>
+                                <div class="logged-user-role">Administrator</div>
                             </div>
                         </div>
-                    </li>
-                @include('admin.partials.nav')
-                    <li class="li-hover"><div class="divider"></div></li>
-                    <li class="li-hover"><p class="ultra-small margin more-text">MORE</p></li>
-                    <li class="li-hover"><div class="divider"></div></li>
-                    <li class="li-hover"><p class="ultra-small margin more-text">Daily es</p></li>
-                    <li class="li-hover">
-                        <div class="row">
-                            <div class="col s12 m12 l12">
-                                <div class="sample-chart-wrapper">
-                                    <div class="ct-chart ct-golden-section" id="ct2-chart"></div>
+                        <div class="bg-icon"><i class="os-icon os-icon-wallet-loaded"></i></div>
+                        <ul>
+                            <li><a href="apps_email.html"><i
+                                            class="os-icon os-icon-mail-01"></i><span>Incoming Mail</span></a></li>
+                            <li><a href="users_profile_big.html"><i class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
+                            </li>
+                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing Details</span></a>
+                            </li>
+                            <li><a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a></li>
+                            <li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h1 class="menu-page-header">Page Header</h1>
+            @include('admin.partials.menu')
+
+        </div>
+<!--------------------
+END - Main Menu
+-------------------->
+        <div class="content-w">
+<!--------------------
+START - Top Bar
+-------------------->
+            <div class="top-bar color-scheme-light">
+
+                <div class="top-menu-controls">
+                    <div class="element-search autosuggest-search-activator"><input
+                                placeholder="Start typing to search..." type="text"></div>
+ <!--------------------
+START - Messages Link in secondary top menu
+-------------------->
+                    <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left"><i
+                                class="os-icon os-icon-mail-14"></i>
+                        <div class="new-messages-count">12</div>
+                        <div class="os-dropdown light message-list">
+                            <ul>
+                                <li><a href="#">
+                                        <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                                        <div class="message-content"><h6 class="message-from">John Mayers</h6><h6
+                                                    class="message-title">Account Update</h6></div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
+                                        <div class="message-content"><h6 class="message-from">Phil Jones</h6><h6
+                                                    class="message-title">Secutiry Updates</h6></div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+                                        <div class="message-content"><h6 class="message-from">Bekky Simpson</h6><h6
+                                                    class="message-title">Vacation Rentals</h6></div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
+                                        <div class="message-content"><h6 class="message-from">Alice Priskon</h6><h6
+                                                    class="message-title">Payment Confirmation</h6></div>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+<!--------------------
+END - Messages Link in secondary top menu
+--------------------><!--------------------
+START - Settings Link in secondary top menu
+-------------------->
+                    <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
+                        <i class="os-icon os-icon-ui-46"></i>
+                        <div class="os-dropdown">
+                            <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>
+                            <ul>
+                                <li><a href="/"><i class="os-icon os-icon-ui-49"></i><span>Profile Settings</span></a>
+                                </li>
+                                <li><a href="/"><i class="os-icon os-icon-grid-10"></i><span>Billing Info</span></a>
+                                </li>
+                                <li><a href="/"><i class="os-icon os-icon-ui-44"></i><span>My Invoices</span></a>
+                                </li>
+                                <li><a href="/"><i class="os-icon os-icon-ui-15"></i><span>Cancel Account</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!--------------------
+END - Settings Link in secondary top menu
+-------------------->
+                </div>
+<!--------------------
+END - Top Menu Controls
+-------------------->
+            </div>
+<!--------------------
+END - Top Bar
+-------------------->
+            <div class="content-i" style="margin-bottom:5%;">
+                <div class="content-box"><!--START - Control panel above projects-->
+                    <!--END - Control panel above projects-->
+                    @yield('header')
+                    <div class="row">
+                        @yield('content')
+                    </div>
+ <!--------------------
+START - Color Scheme Toggler
+-------------------->
+                    <div class="floated-colors-btn second-floated-btn">
+                        <div class="os-toggler-w">
+                            <div class="os-toggler-i">
+                                <div class="os-toggler-pill"></div>
+                            </div>
+                        </div>
+                        <span>Dark </span><span>Colors</span>
+                    </div>
+<!--------------------
+END - Color Scheme Toggler
+-------------------->
+
+ <!--------------------
+START - Demo Customizer
+-------------------->
+                    <div class="floated-customizer-btn third-floated-btn">
+                        <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>
+                        <span>Customizer</span></div>
+                    <div class="floated-customizer-panel">
+                        <div class="fcp-content">
+                            <div class="close-customizer-btn"><i class="os-icon os-icon-x"></i></div>
+                            <div class="fcp-group">
+                                <div class="fcp-group-header">Menu Settings</div>
+                                <div class="fcp-group-contents">
+                                    <div class="fcp-field"><label for="">Menu Position</label><select
+                                                class="menu-position-selector">
+                                            <option value="left">Left</option>
+                                            <option value="right">Right</option>
+                                            <option value="top">Top</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Menu Style</label><select
+                                                class="menu-layout-selector">
+                                            <option value="compact">Compact</option>
+                                            <option value="full">Full</option>
+                                            <option value="mini">Mini</option>
+                                        </select></div>
+                                    <div class="fcp-field with-image-selector-w"><label for="">With Image</label><select
+                                                class="with-image-selector">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Menu Color</label>
+                                        <div class="fcp-colors menu-color-selector">
+                                            <div class="color-selector menu-color-selector color-bright selected"></div>
+                                            <div class="color-selector menu-color-selector color-dark"></div>
+                                            <div class="color-selector menu-color-selector color-light"></div>
+                                            <div class="color-selector menu-color-selector color-transparent"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fcp-group">
+                                <div class="fcp-group-header">Sub Menu</div>
+                                <div class="fcp-group-contents">
+                                    <div class="fcp-field"><label for="">Sub Menu Style</label><select
+                                                class="sub-menu-style-selector">
+                                            <option value="flyout">Flyout</option>
+                                            <option value="inside">Inside/Click</option>
+                                            <option value="over">Over</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Sub Menu Color</label>
+                                        <div class="fcp-colors">
+                                            <div class="color-selector sub-menu-color-selector color-bright selected"></div>
+                                            <div class="color-selector sub-menu-color-selector color-dark"></div>
+                                            <div class="color-selector sub-menu-color-selector color-light"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fcp-group">
+                                <div class="fcp-group-header">Other Settings</div>
+                                <div class="fcp-group-contents">
+                                    <div class="fcp-field"><label for="">Full Screen?</label><select
+                                                class="full-screen-selector">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Show Top Bar</label><select
+                                                class="top-bar-visibility-selector">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Above Menu?</label><select
+                                                class="top-bar-above-menu-selector">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select></div>
+                                    <div class="fcp-field"><label for="">Top Bar Color</label>
+                                        <div class="fcp-colors">
+                                            <div class="color-selector top-bar-color-selector color-bright selected"></div>
+                                            <div class="color-selector top-bar-color-selector color-dark"></div>
+                                            <div class="color-selector top-bar-color-selector color-light"></div>
+                                            <div class="color-selector top-bar-color-selector color-transparent"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
-                <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2"><i class="mdi-navigation-menu" ></i></a>
-            </aside>
-            <!-- END LEFT SIDEBAR NAV-->
+                    </div>
+ <!--------------------
+END - Demo Customizer
+-------------------->
+<!--------------------
+START - Chat Popup Box
+-------------------->
 
-            <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-            <!-- START CONTENT -->
-            <!--breadcrumbs start-->
-            <div id="breadcrumbs-wrapper" class=" grey lighten-3">
-            @yield('header')
+            <div class="floated-chat-btn"><i class="os-icon os-icon-mail-07"></i><span>Demo Chat</span></div>
+                    <div class="floated-chat-w">
+                        <div class="floated-chat-i">
+                            <div class="chat-close"><i class="os-icon os-icon-close"></i></div>
+                            <div class="chat-head">
+                                <div class="user-w with-status status-green">
+                                    <div class="user-avatar-w">
+                                        <div class="user-avatar"><img alt="" src="/assets/img/avatar1.jpg"></div>
+                                    </div>
+                                    <div class="user-name"><h6 class="user-title">John Mayers</h6>
+                                        <div class="user-role">Account Manager</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="message">
+                                    <div class="message-content">Hi, how can I help you?</div>
+                                </div>
+                                <div class="date-break">Mon 10:20am</div>
+                                <div class="message">
+                                    <div class="message-content">Hi, my name is Mike, I will be happy to assist you
+                                    </div>
+                                </div>
+                                <div class="message self">
+                                    <div class="message-content">Hi, I tried ordering this product and it keeps showing
+                                        me error code.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-controls"><input class="message-input"
+                                                              placeholder="Type your message here..." type="text">
+                                <div class="chat-extra"><a href="#"><span class="extra-tooltip">Attach Document</span><i
+                                                class="os-icon os-icon-documents-07"></i></a><a href="#"><span
+                                                class="extra-tooltip">Insert Photo</span><i
+                                                class="os-icon os-icon-others-29"></i></a><a href="#"><span
+                                                class="extra-tooltip">Upload Video</span><i
+                                                class="os-icon os-icon-ui-51"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+<!--------------------
+END - Chat Popup Box
+--------------------> </div>
             </div>
-            <!--breadcrumbs end-->
-
-            <section id="content">
-
-                <!--start container-->
-                <div class="container">
-
-                    <!--chart dashboard start-->
-                    <div id="chart-dashboard">
-             @yield('content')
-           </div>
-
-         </div>
-       </section>
-         </div>
-       </div>
-       <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-       <!-- START FOOTER -->
-       <br>
-       <br>
-       <br>
-       <br><br>
-       <footer class="grey darken-3">
-           <div class="container">
-               <div class="row">
-                   <div class="col l6 s12">
-                       <h5 class="white-text">World Market</h5>
-                       <p class="grey-text text-lighten-4">World map, world regions, countries and cities.</p>
-
-                   </div>
-                   <div class="col l4 offset-l2 s12">
-                       <h5 class="white-text">Sales by Country</h5>
-                       <p class="grey-text text-lighten-4">A sample polar chart to show sales by country.</p>
-                       <div id="polar-chart-holder">
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <div class="footer-copyright">
-               <div class="container grey-text text-lighten-4">
-                   Copyright © 2018 <a class="grey-text text-lighten-4" href="#" target="_blank"></a> Todos los Derechos Reservados.
-                   <span class="right grey-text text-lighten-4"> Desarrollado y diseñado por <a class="grey-text text-lighten-4" href="http://geekslabs.com/">Jose</a></span>
-               </div>
-           </div>
-       </footer>
-       <!-- END FOOTER -->
-
-
-       <!-- ================================================
-       Scripts
-       ================================================ -->
-
-       <!-- jQuery Library -->
-       <script type="text/javascript" src="{{asset('resources/js/jquery-1.11.2.min.js')}}"></script>
-       <!--materialize js-->
-       <script type="text/javascript" src="{{asset('resources/js/materialize.min.js')}}"></script>
-       <!--scrollbar-->
-       <script type="text/javascript" src="{{asset('resources/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-
-
-
-       <script type="text/javascript" src="{{asset('resources/js/plugins/chartist-js/chartist.min.js')}}"></script>
-
-
-       <script type="text/javascript" src="{{asset('resources/js/plugins/chartjs/chart.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('resources/js/plugins/chartjs/chart-script.js')}}"></script>
-
-       <script type="text/javascript" src="{{asset('resources/js/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('resources/js/plugins/sparkline/sparkline-script.js')}}"></script>
-
-       <!--jvectormap-->
-       <script type="text/javascript" src="{{asset('resources/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('resources/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-       <script type="text/javascript" src="{{asset('resources/js/plugins/jvectormap/vectormap-script.js')}}"></script>
-       <!-- data-tables -->
-       <script type="text/javascript" src="{{asset('resources/js/plugins/data-tables/js/jquery.dataTables.min.js')}}"></script>
-       <script type="text/javascript" src="{{asset('resources/js/plugins/data-tables/data-tables-script.js')}}"></script>
-
-       <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-       <script type="text/javascript" src="{{asset('resources/js/plugins.js')}}"></script>
-       @include('admin.partials.message')
-    @yield('script')
-
-       <script>
-           $(document).ready(function () {
-               var nnt = 0,nnt2 = 0,nntg = 0;
-               var url = '{{route('getnewnotify')}}';
-               $.get('{{route('getBuzon')}}',function (data) {
-                   nntg =  data.length;
-                   if(data.length>0){
-                       for(var i = 0; i<= data.length;i++){
-                           $('#typenoty_3').show();
-                           $('#typenoty_3').text(i)
-                       }
-                   }else{
-                       $('#typenoty_3').removeClass();
-                   }
-
-               });
-               $.get(url,function (data) {
-                    nntg = nntg + data.length;
-                   if(data != null && nntg >0){
-                       $('#view_count_notify').text(nntg);
-                       $.each(data,function (i,d) {
-                           if(d.typenoti === "1"){
-                                nnt = nnt +1;
-                               $('#typenoty_1').show();
-                               $('#typenoty_1').text(nnt)
-                           }else if(d.typenoti === "2"){
-                               nnt2 = nnt2 +1;
-                               $('#typenoty_2').show();
-                               $('#typenoty_2').text(nnt2)
-                           }
-                       })
-
-                   }else{
-                       $('#view_count_notify').removeClass();
-                       $('#typenoty_1').removeClass();
-                       $('#typenoty_2').removeClass();
-                   }
-               });
-           })
-
-           function view(id) {
-               $.get('{{route('updateview')}}?idusuario='+id,function (data) {
-                   location.reload(true);
-               });
-           }
-       </script>
-   </body>
-
-   </html>
+        </div>
+    </div>
+    <div class="display-type"></div>
+</div>
+<script src="{{asset('assets/bower_components/jquery/dist/jquery.min.js')}}"></script>
+@yield('script_top')
+<script src="{{asset('assets/bower_components/popper.js/dist/umd/popper.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/moment/moment.js')}}"></script>
+<script src="{{asset('assets/bower_components/chart.js/dist/Chart.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/jquery-bar-rating/dist/jquery.barrating.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap-validator/dist/validator.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('assets/bower_components/ion.rangeSlider/js/ion.rangeSlider.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/dropzone/dist/dropzone.js')}}"></script>
+<script src="{{asset('assets/bower_components/editable-table/mindmup-editabletable.js')}}"></script>
+<script src="{{asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/fullcalendar/dist/fullcalendar.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/tether/dist/js/tether.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/slick-carousel/slick/slick.min.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/util.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/alert.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/button.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/carousel.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/collapse.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/dropdown.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/modal.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/tab.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/tooltip.js')}}"></script>
+<script src="{{asset('assets/bower_components/bootstrap/js/dist/popover.js')}}"></script>
+<script src="{{asset('assets/js/demo_customizer4a76.js?version=4.3.0')}}"></script>
+<script src="{{asset('assets/js/main4a76.js?version=4.3.0')}}"></script>
+@include('admin.partials.message')
+@yield('script_botton')
+</body>

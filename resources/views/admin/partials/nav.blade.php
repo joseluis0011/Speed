@@ -1,12 +1,15 @@
 
-<li {{request()->is('admin')?'class=active':''}}><a href="{{route('admin')}}" class="waves-effect waves-cyan"><i class="mdi-action-home"></i> Inicio</a>
+<li {{request()->is('admin')?'class=active':''}}>
+    <a href="{{route('admin')}}" class="waves-effect waves-cyan"><i class="mdi-action-home"></i> Inicio</a>
 </li>
 <li class="no-padding">
     <ul class="collapsible collapsible-accordion">
-        <li  {{request()->is('admin/clientes*')?'class=active':''}}><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-social-person-add"></i> Registrar</a>
+        <li  {{request()->is('admin/clientes*')?'class=active':''}}><a class="collapsible-header waves-effect waves-cyan">
+                <i class="mdi-social-person-add"></i> Registrar</a>
             <div class="collapsible-body">
                 <ul>
-                    <li {{request()->is('admin/clientes')?'class=active':''}}><a href="{{route('admin.clientes.index')}}">Cliente</a>
+                    <li {{request()->is('admin/clientes')?'class=active':''}}>
+                        <a href="{{route('admin.clientes.index')}}">Cliente</a>
                     </li>
                     <li {{request()->is('admin/administrador')?'class=active':''}}><a href="{{route('admin.administrador.index')}}">Administrator</a>
                     </li>

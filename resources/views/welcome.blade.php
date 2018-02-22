@@ -45,8 +45,8 @@
       <li>
         <img src="https://hdwallpaperim.com/wp-content/uploads/2017/08/25/126849-network-computer-switch-wire-data_center-748x421.jpg"> <!-- random image -->
         <div class="caption center-align">
-          <h2>Welcome Speed-Networck</h2>
-          <h3 class="light grey-text text-lighten-3">Y al menorp recio.</h3>
+          <h2>Welcome Speed-Network</h2>
+          <h3 class="light grey-text text-lighten-3">Y al menor Precio.</h3>
         </div>
       </li>
 
@@ -54,7 +54,7 @@
         <img src="https://wallpaperscraft.com/image/squares_shape_light_85528_1920x1080.jpg"> <!-- random image -->
         <div class="caption center-align">
           <h2>Navega en altas velocidades </h2>
-          <h3 class="light grey-text text-lighten-3">Y al menorp recio.</h3>
+          <h3 class="light grey-text text-lighten-3">Y al menor Precio.</h3>
         </div>
       </li>
 
@@ -69,8 +69,8 @@
       <li>
         <img src="img/antenas1.jpg" > <!-- random image -->
         <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>Mejor Conectividad</h3>
+          <h5 class="light grey-text text-lighten-3">Calidad de Servicio.</h5>
         </div>
       </li>
     </ul>
@@ -100,7 +100,7 @@
      </div>
      <div class="card-content">
        <span class="card-title activator grey-text text-darken-4">Plan 35<i class="material-icons right">more_vert</i></span>
-
+       <p><a >Instalacion S/.80</a></p>
      </div>
      <div class="card-reveal">
        <span class="card-title grey-text text-darken-4">Plan S/.35<i class="material-icons right">close</i></span>
@@ -117,7 +117,7 @@
   </div>
   <div class="card-content">
     <span class="card-title activator grey-text text-darken-4">Plan 40<i class="material-icons right">more_vert</i></span>
-    <p><a href="#">This is a link</a></p>
+    <p><a >Instalacion S/.80</a></p>
   </div>
   <div class="card-reveal">
     <span class="card-title grey-text text-darken-4">Plan S/.40<i class="material-icons right">close</i></span>
@@ -134,7 +134,7 @@
  </div>
  <div class="card-content">
    <span class="card-title activator grey-text text-darken-4">Plan 50<i class="material-icons right">more_vert</i></span>
-   <p><a href="#">This is a link</a></p>
+   <p><a >Instalacion S/.100</a></p>
  </div>
  <div class="card-reveal">
    <span class="card-title grey-text text-darken-4">Plan S/.50<i class="material-icons right">close</i></span>
@@ -153,7 +153,7 @@
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">Plan 60<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
+      <p><a >Instalacion S/.100</a></p>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Plan S/.60<i class="material-icons right">close</i></span>
@@ -170,7 +170,7 @@
  </div>
  <div class="card-content">
    <span class="card-title activator grey-text text-darken-4">Plan 70<i class="material-icons right">more_vert</i></span>
-   <p><a href="#">This is a link</a></p>
+   <p><a >Instalacion S/.100</a></p>
  </div>
  <div class="card-reveal">
    <span class="card-title grey-text text-darken-4">Plan S/.70<i class="material-icons right">close</i></span>
@@ -187,7 +187,7 @@
 </div>
 <div class="card-content">
   <span class="card-title activator grey-text text-darken-4">Plan 80<i class="material-icons right">more_vert</i></span>
-  <p><a href="#">This is a link</a></p>
+  <p><a >Instalacion S/.80</a></p>
 </div>
 <div class="card-reveal">
   <span class="card-title grey-text text-darken-4">Plan S/.80<i class="material-icons right">close</i></span>
@@ -267,7 +267,7 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
+          <h5 class="white-text">{{config('app.name')}}</h5>
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
 

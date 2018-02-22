@@ -49,7 +49,7 @@
         <div class="row">
           <div class="input-field col s12 center">
             <img src="resources/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-            <p class="center login-form-text">Material Design Admin Template</p>
+            <p class="center login-form-text">Bienvenido ingrese sus Datos</p>
           </div>
         </div>
         <div class="row margin">
@@ -94,6 +94,20 @@
 
   <!-- jQuery Library -->
   <script type="text/javascript" src="resources/js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="resources/js/jquery.backstretch.min.js"></script>
+  <script>
+    $(document).ready(function(e){
+      $.backstretch([
+        "img/img1.jpg",
+        "img/img2.jpg",
+        "img/img3.jpg",
+        "img/img4.jpg",
+      ],{
+        fade:750,
+        duration:8000
+      });
+    });
+  </script>
   <!--materialize js-->
   <script type="text/javascript" src="resources/js/materialize.js"></script>
   <!--prism-->

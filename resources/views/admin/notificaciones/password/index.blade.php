@@ -1,69 +1,84 @@
 @extends('admin.layout')
 @section('header')
-  <!--breadcrumbs start-->
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <h5 class="breadcrumbs-title">Cambio de Contraseña Wi-Fi</h5>
-        <ol class="breadcrumb">
-          <li><a href="index.html">Inicio</a>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <!--breadcrumbs end-->
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="index-2.html">Products</a></li>
+        <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+    </ul>
 @stop
 @section('content')
 
-    <!--DataTables example-->
-    <div id="table-datatables">
-      <h4 class="header">Solicitudes</h4>
-      <div class="row">
-        <div class="col s12 ">
-          <table id="data-table-simple" class="responsive-table display" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>DNI</th>
-                    <th>Contraseña Nueva</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
+    <div class="layout-w">
+        <div class="content-w">
+            <div class="content-i">
+                <div class="content-box">
+                    <div class="col-sm-12">
+                        <div class="element-wrapper">
+                            <h4 class="header">Lista de Solicitudes</h4>
+                            <div class="element-box-tp"><!--------------------
+START - Controls Above Table
+-------------------->
 
-            <tfoot>
-                <tr>
-                  <th>Nombre</th>
-                  <th>DNI</th>
-                  <th>Contraseña Nueva</th>
-                 <th>Acciones</th>
-                </tr>
-            </tfoot>
-            @foreach($noti as $not)
-                  @if($not->view == 'no')
-                      <tr style="background: #FEA47F;">
-                          @else
-                      <tr style="background: #9AECDB;">
-                      @endif
-                      <td>{{$not->persona->user->nombre}} {{$not->persona->user->apellido}}</td>
-                      <td>{{$not->persona->user->dni}}</td>
-                      <td>{{$not->reclamo}}</td>
-                      <td>
-                          @if($not->view == 'no')
-                              <a onclick="view('{{$not->idnotificaciones}}')" class="btn">view</a>
-                          @else
-                              <a href="#" >Edit</a>
-                              <a href="#" >Delete</a>
-                          @endif
-                      </td>
-                  </tr>
-            @endforeach
-            <tbody>
+                                <div class="controls-above-table">
+                                    <div class="row">
+                                        <div class="col-sm-6"><a class="btn btn-sm btn-secondary" href="#">Download
+                                                CSV</a><a class="btn btn-sm btn-secondary" href="#">Archive</a><a class="btn btn-sm btn-danger" href="#">Delete</a></div>
+                                        <div class="col-sm-6">
+                                            <form class="form-inline justify-content-sm-end"><input class="form-control form-control-sm rounded bright" placeholder="Search" type="text"><select class="form-control form-control-sm rounded bright">
+                                                    <option selected="selected" value="">Select Status</option>
+                                                    <option value="Pending">Pending</option>
+                                                    <option value="Active">Active</option>
+                                                    <option value="Cancelled">Cancelled</option>
+                                                </select></form>
+                                        </div>
+                                    </div>
+                                </div><!--------------------
+END - Controls Above Table
+------------------          --><!--------------------
+START - Table with actions
+------------------  -->
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-lg table-v2 table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">
+                                                <input class="form-control" type="checkbox">
+                                            </th>
+                                            <th>Nombre</th>
+                                            <th>DNI</th>
+                                            <th>Nueva Contraseña</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
 
-            </tbody>
-          </table>
+                                        </tbody>
+                                    </table>
+                                </div><!--------------------
+END - Table with actions
+------------------            --><!--------------------
+START - Controls below table
+------------------  -->
+                                <div class="controls-below-table">
+                                    <div class="table-records-info">Showing records 1 - 5</div>
+                                    <div class="table-records-pages">
+                                        <ul>
+                                            <li><a href="#">Previous</a></li>
+                                            <li><a class="current" href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">Next</a></li>
+                                        </ul>
+                                    </div>
+                                </div><!--------------------
+END - Controls below table
+--------------------></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
 

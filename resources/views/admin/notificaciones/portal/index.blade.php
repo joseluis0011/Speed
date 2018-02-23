@@ -1,58 +1,57 @@
 @extends('admin.layout')
 @section('header')
-  <!--breadcrumbs start-->
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <h5 class="breadcrumbs-title">Cambio de Contraseña</h5>
-        <ol class="breadcrumb">
-          <li><a href="index.html">Inicio</a>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <!--breadcrumbs end-->
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="index-2.html">Products</a></li>
+    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+  </ul>
 @stop
 @section('content')
-  <div id="" class="">
-    <div class="modal-content">
+  <div class="content-i">
+    <div class="content-box">
       <div class="row">
-        <div class="col s12 center">
-          <h4>Cambio de Contraseña</h4>
-      </div>
-      </div>
-      <!-- Form with validation -->
-      <div class="col s12 " >
-          <div class="row">
-            <form method="POST" class="col s12"  action="{{route('changePassword')}}">
-              {{ csrf_field() }}
-              <div class="row">
-                <div class="input-field col s4">
-                  <i class="mdi-action-account-child prefix"></i>
-                  <input name="password"  type="password" class="validate">
-                  <label for="az">Contraseña Actual</label>
+        <div class="col-lg-12">
+          <div class="element-wrapper"><h6 class="element-header">Cambio de Contraseña de su Portal</h6>
+            <div class="element-box">
+              <form><h5 class="form-header">Default Layout</h5>
+                <div class="form-desc">Discharge best employed your phase each the of shine. Be
+                  met even reason consider logbook redesigns. Never a turned interfaces among
+                  asking
                 </div>
-                <div class="input-field col s4">
-                  <i class="mdi-action-account-child prefix"></i>
-                  <input name="new_password"  type="password" class="validate">
-                  <label for="az">Nueva Contraseña</label>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group"><label for=""> Usuario</label><input
+                              class="form-control" placeholder="este campo tiene que estar desabilitado" type="text" value="">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group"><label for="">DNI</label><input
+                              class="form-control" placeholder="este campo tiene que estar desabilitado" type="password">
+                    </div>
+                  </div>
                 </div>
-
-              </div>
-
-              <br>
-              <div class="row">
-                <div class="col s12 center">
-                  <button class="btn cyan waves-effect waves-light" type="submit">Cambiar
-                    <i class="mdi-content-send right"></i>
-                  </button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group"><label for=""> Nueva Contraseña</label><input
+                              class="form-control" placeholder="Password" type="password">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group"><label for="">Repita la Nueva Contraseña</label><input
+                              class="form-control" placeholder="Password" type="password">
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </form>
+                <div class="form-buttons-w">
+                  <button class="btn btn-primary" type="submit"> Submit</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
+
       </div>
-    </div>
+
+      </div>
   </div>
 @endsection

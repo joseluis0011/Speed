@@ -2,7 +2,7 @@
 @section('header')
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="index-2.html">Inicio</a></li>
-        <li class="breadcrumb-item"><a href="index-2.html">Products</a></li>
+        <li class="breadcrumb-item"><a href="index-2.html">Clientes</a></li>
         <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
     </ul>
 @stop

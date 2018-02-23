@@ -1,9 +1,8 @@
 @extends('admin.layout')
 @section('header')
   <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="index-2.html">Products</a></li>
-    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+    <li class="breadcrumb-item"><a href="{{route('admin')}}">Inicio</a></li>
+    <li class="breadcrumb-item"><span>Lista de Administradores</span></li>
   </ul>
 @stop
 @section('content')
@@ -33,17 +32,21 @@ START - Controls Above Table
               <div class="modal-body">
                 <form>
                   <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                       <div class="form-group"><label for=""> Nombre</label><input class="form-control" name="nombre"
                                                                                   type="text"></div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                       <div class="form-group"><label for="">Apellido</label><input class="form-control" name="apellido"
                                                                                    type="password"></div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                       <div class="form-group"><label for=""> Telefono</label><input class="form-control" name="telefono"
                                                                                  type="number"></div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="form-group"><label for="">Email</label><input class="form-control" name="email"
+                                                                                type="email"></div>
                     </div>
                   </div>
                   <div class="row">
@@ -52,9 +55,10 @@ START - Controls Above Table
                                                                                      type="number"></div>
                     </div>
                     <div class="col-sm-4">
-                      <div class="form-group"><label for="">Email</label><input class="form-control" name="email"
-                                                                                   type="email"></div>
+                      <div class="form-group"><label for=""> Password</label><input class="form-control" name="password"
+                                                                               type="password"></div>
                     </div>
+
                     <div class="col-sm-4">
                       <div class="form-group"><label for="">Estado</label><input class="form-control" name="estado"
                                                                                  type="text"></div>
@@ -101,6 +105,7 @@ START - Table with actions
               <th>Apellido</th>
               <th>Telefono</th>
               <th>DNI</th>
+              <th>Password</th>
               <th>estado</th>
               <th>Email</th>
             </tr>

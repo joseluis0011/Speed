@@ -84,14 +84,10 @@ START - Main Menu
                         </div>
                         <div class="bg-icon"><i class="os-icon os-icon-wallet-loaded"></i></div>
                         <ul>
-                            <li><a href="apps_email.html"><i
-                                            class="os-icon os-icon-mail-01"></i><span>Incoming Mail</span></a></li>
-                            <li><a href="users_profile_big.html"><i class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
+                            <li><a href="{{route('admin.perfil.index')}}"><i class="os-icon os-icon-user-male-circle2"></i><span>Perfil</span></a>
                             </li>
-                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-coins-4"></i><span>Billing Details</span></a>
-                            </li>
-                            <li><a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a></li>
-                            <li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
+                            <li><a href="{{route('admin.notificaciones.buzon.index')}}"><i class="os-icon os-icon-others-43"></i><span>Buzon</span></a></li>
+                            <li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Salir</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -299,14 +295,14 @@ START - Chat Popup Box
                                     <div class="user-avatar-w">
                                         <div class="user-avatar"><img alt="" src="/assets/img/avatar1.jpg"></div>
                                     </div>
-                                    <div class="user-name"><h6 class="user-title">John Mayers</h6>
+                                    <div class="user-name"><h6 class="user-title">Administrador</h6>
                                         <div class="user-role">Account Manager</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="chat-messages">
                                 <div class="message">
-                                    <div class="message-content">Hi, how can I help you?</div>
+                                    <div class="message-content">Hola necesitas ayuda..?</div>
                                 </div>
                                 <div class="date-break">Mon 10:20am</div>
                                 <div class="message">

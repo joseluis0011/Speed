@@ -1,18 +1,9 @@
 @extends('admin.layout')
 @section('header')
-  <!--breadcrumbs start-->
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <h5 class="breadcrumbs-title">Posts</h5>
-        <ol class="breadcrumb">
-          <li><a href="index.html">Inicio</a>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <!--breadcrumbs end-->
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('admin')}}">Inicio</a></li>
+    <li class="breadcrumb-item"><span>Editar</span></li>
+  </ul>
 @stop
 @section('content')
   <!--DataTables example-->

@@ -1,9 +1,8 @@
 @extends('admin.layout')
 @section('header')
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index-2.html">Inicio</a></li>
-        <li class="breadcrumb-item"><a href="index-2.html">Clientes</a></li>
-        <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+        <li class="breadcrumb-item"><a href="{{route('admin')}}">Inicio</a></li>
+        <li class="breadcrumb-item"><span>Lista de Clientes</span></li>
     </ul>
 @stop
 @section('content')

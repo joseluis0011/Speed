@@ -42,7 +42,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function() {
 });
 Route::post('newCliente','Admin\BuzonController@newCliente')->name('newCliente');
 //-------------------------- routes user cliente auth-------------------------------------
-Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'user','namespace'=>'User'],function(){
     // route user here
     Route::get('/','UserController@index');
 });

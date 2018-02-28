@@ -30,27 +30,27 @@
                                 <div class="row">
                                     <div class="col-sm-6"><a
                                                 class="element-box el-tablo centered trend-in-corner padded bold-label"
-                                                href="{{route('admin')}}">
+                                                href="">
                                             <div class="value">24</div>
-                                            <div class="label">Total de Clientes Registrados</div>
+                                            <div class="label">Mi Plan</div>
                                         </a></div>
                                     <div class="col-sm-6"><a
                                                 class="element-box el-tablo centered trend-in-corner padded bold-label"
-                                                href="{{route('admin')}}">
+                                                href="">
                                             <div class="value">24</div>
-                                            <div class="label">Total de Administradores Registrados</div>
+                                            <div class="label">Fecha de Pago</div>
                                         </a></div>
                                     <div class="col-sm-6"><a
                                                 class="element-box el-tablo centered trend-in-corner padded bold-label"
-                                                href="{{route('admin')}}">
+                                                href="">
                                             <div class="value">24</div>
-                                            <div class="label">Total de Antenas Prestadas</div>
+                                            <div class="label">Mi usuario</div>
                                         </a></div>
                                     <div class="col-sm-6"><a
                                                 class="element-box el-tablo centered trend-in-corner padded bold-label"
-                                                href="{{route('admin')}}">
+                                                href="">
                                             <div class="value">24</div>
-                                            <div class="label">Total de Dinero</div>
+                                            <div class="label">Mi direccion</div>
                                         </a></div>
                                 </div>
                             </div>

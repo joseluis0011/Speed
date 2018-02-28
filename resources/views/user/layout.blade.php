@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>SpeedTest</title>
     <meta charset="utf-8">
@@ -14,6 +14,8 @@
     <link href="{{asset('assets/bower_components/slick-carousel/slick/slick.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/main4a76.css?version=4.3.0')}}" rel="stylesheet">
     <link href="{{asset('icon_fonts_assets/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body class="menu-position-side menu-side-left full-screen">
 <div class="all-wrapper solid-bg-all">
@@ -45,7 +47,7 @@
                 START - Mobile Menu List
                 -------------------->
 
-            @include('admin.partials.menu-phone')
+            @include('user.partials.menu-phone')
             <!--------------------
 END - Mobile Menu List
 -------------------->
@@ -60,7 +62,7 @@ END - Mobile Menu List
         -------------------->
         <div class="menu-w selected-menu-color-light menu-has-selected-link menu-activated-on-click color-scheme-light color-style-default sub-menu-color-light menu-position-side menu-side-left menu-layout-full sub-menu-style-inside">
             <div class="logo-w">
-                <a class="logo" href="/admin">
+                <a class="logo" href="/user">
                     <div class="logo-element"></div>
                     <div class="logo-label">SpeedTest</div>
                 </a></div>
@@ -84,9 +86,9 @@ END - Mobile Menu List
                         </div>
                         <div class="bg-icon"><i class="os-icon os-icon-wallet-loaded"></i></div>
                         <ul>
-                            <li><a href="{{route('admin.perfil.index')}}"><i class="os-icon os-icon-user-male-circle2"></i><span>Perfil</span></a>
+                            <li><a href="{{route('user.perfil.index')}}"><i class="os-icon os-icon-user-male-circle2"></i><span>Perfil</span></a>
                             </li>
-                            <li><a href="{{route('admin.notificaciones.buzon.index')}}"><i class="os-icon os-icon-others-43"></i><span>Buzon</span></a></li>
+                            <li><a href="{{route('user.pagos.index')}}"><i class="os-icon os-icon-others-43"></i><span>Facturacion</span></a></li>
                             <li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Salir</span></a></li>
                         </ul>
                     </div>
@@ -365,6 +367,13 @@ END - Settings Link in secondary top menu
 <script src="{{asset('assets/bower_components/bootstrap/js/dist/popover.js')}}"></script>
 <script src="{{asset('assets/js/demo_customizer4a76.js?version=4.3.0')}}"></script>
 <script src="{{asset('assets/js/main4a76.js?version=4.3.0')}}"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script>
+        $(document).ready(function() {
+        $('#example').DataTable();
+} );
+</script>
 @include('user.partials.message')
 @yield('script_botton')
 </body>

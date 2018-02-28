@@ -20,11 +20,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function() {
     Route::get('notificaciones/buzon', 'BuzonController@index')->name('admin.notificaciones.buzon.index');
     Route::get('notificaciones/portal', 'PortalController@index')->name('admin.notificaciones.portal.index');
     Route::get('clientes', 'RegClientController@index')->name('admin.clientes.index');
-    Route::get('clientes/create', 'RegClientController@create')->name('admin.clientes.create');
+   // Route::get('clientes/create', 'RegClientController@create')->name('admin.clientes.create');
     Route::get('administrador', 'RegAdminController@index')->name('admin.administrador.index');
-    Route::get('administrador/create', 'RegAdminController@create')->name('admin.administrador.create');
+    //Route::get('administrador/create', 'RegAdminController@create')->name('admin.administrador.create');
     Route::get('pagos', 'PagosController@index')->name('admin.pagos.index');
-    Route::get('pagos/create', 'PagosController@create')->name('admin.pagos.create');
+    //Route::get('pagos/create', 'PagosController@create')->name('admin.pagos.create');
     Route::get('perfil', 'PerfilController@index')->name('admin.perfil.index');
     Route::get('/', 'AdminController@index')->name('admin');
 
@@ -45,6 +45,11 @@ Route::post('newCliente','Admin\BuzonController@newCliente')->name('newCliente')
 Route::group(['prefix'=>'user','namespace'=>'User'],function(){
     // route user here
     Route::get('/','UserController@index');
+    Route::get('perfil', 'PerfilController@index')->name('user.perfil.index');
+    Route::get('pagos', 'PagosController@index')->name('user.pagos.index');
+    Route::get('password', 'PasswordController@index')->name('user.password.index');
+    Route::get('reclamos', 'ReclamosController@index')->name('user.reclamos.index');
+    Route::get('portal', 'PortalController@index')->name('user.portal.index');
 });
 
 

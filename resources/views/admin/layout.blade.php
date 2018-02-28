@@ -14,6 +14,8 @@
     <link href="{{asset('assets/bower_components/slick-carousel/slick/slick.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/main4a76.css?version=4.3.0')}}" rel="stylesheet">
     <link href="{{asset('icon_fonts_assets/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body class="menu-position-side menu-side-left full-screen">
 <div class="all-wrapper solid-bg-all">
@@ -365,6 +367,13 @@ END - Chat Popup Box
 <script src="{{asset('assets/bower_components/bootstrap/js/dist/popover.js')}}"></script>
 <script src="{{asset('assets/js/demo_customizer4a76.js?version=4.3.0')}}"></script>
 <script src="{{asset('assets/js/main4a76.js?version=4.3.0')}}"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
 @include('admin.partials.message')
 @yield('script_botton')
 </body>

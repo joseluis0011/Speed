@@ -60,11 +60,11 @@
             </div>
             <span>Pagos</span></a>
         <div class="sub-menu-w">
-            <div class="sub-menu-header">Pagos</div>
+            <div class="sub-menu-header">Enviar Facturacion</div>
             <div class="sub-menu-icon"><i class="os-icon os-icon-package"></i></div>
             <div class="sub-menu-i">
                 <ul class="sub-menu">
-                    <li><a href="{{route('admin.pagos.index')}}">Pagos</a></li>
+                    <li><a href="{{route('admin.pagos.index')}}">Enviar Facturacion</a></li>
                 </ul>
             </div>
         </div>

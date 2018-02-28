@@ -25,9 +25,9 @@
             <div class="icon-w">
                 <div class="os-icon os-icon-bell"></div>
             </div>
-            <span>Solicitud</span></a>
+            <span>Solicituds</span></a>
         <div class="sub-menu-w">
-            <div class="sub-menu-header">Solicitud</div>
+            <div class="sub-menu-header">Solicituds</div>
             <div class="sub-menu-icon"><i class="os-icon os-icon-bell"></i></div>
             <div class="sub-menu-i">
                 <ul class="sub-menu">
@@ -46,7 +46,7 @@
         </div>
     </li>
 
-    <li><a href="{{route('user.portaluser.index')}}">
+    <li><a href="{{route('user.portal.index')}}">
             <div class="icon-w">
                 <div class="os-icon os-icon-pencil-1"></div>
             </div>

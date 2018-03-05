@@ -34,6 +34,7 @@ START - Table with actions
                                         <th>Nombre</th>
                                         <th>Mes</th>
                                         <th>Monto</th>
+                                        <th>Fecha</th>
                                         <th>Comentario</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -43,6 +44,7 @@ START - Table with actions
                                         <th>Nombre</th>
                                         <th>Mes</th>
                                         <th>Monto</th>
+                                        <th>Fecha</th>
                                         <th>Comentario</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -54,6 +56,7 @@ START - Table with actions
                                         <td>Edinburgh</td>
                                         <td>61</td>
                                         <td>editar</td>
+                                        <td>editar</td>
                                     </tr>
                                     <tr>
                                         <td>Garrett Winters</td>
@@ -61,6 +64,7 @@ START - Table with actions
                                         <td>Tokyo</td>
                                         <td>63</td>
                                         <td>2011/07/25</td>
+                                        <td>editar</td>
                                     </tr>
                                     <tr>
                                         <td>Ashton Cox</td>
@@ -68,6 +72,7 @@ START - Table with actions
                                         <td>San Francisco</td>
                                         <td>66</td>
                                         <td>2009/01/12</td>
+                                        <td>editar</td>
                                     </tr>
 
                                     </tbody>

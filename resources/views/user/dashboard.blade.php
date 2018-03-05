@@ -59,5 +59,39 @@
                 </div>
             </div><!--END - Projects list--></div>
 
+
+    </div>
+    <div class="col-lg-12">
+        <div class="padded-lg"><!--START - Projects list-->
+            <div class="projects-list">
+                <div class="project-box">
+                    <div class="project-head">
+                        <div class="project-title"><h5>¿Donde Puedo pagar mi Servicio?</h5></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="row align-items-center">
+                            <div class="col-sm-12">
+                                <p>Usted Puede Pagar su Servicio en:</p>
+                                <i class="os-icon os-icon-check"></i> <span>Nuestras Oficinas</span><br>
+                                <i class="os-icon os-icon-check"></i> <span>Agentes BCP</span><br>
+                                <i class="os-icon os-icon-check"></i> <span>Agentes Interbank</span><br>
+                                <i class="os-icon os-icon-check"></i> <span>Via pago web de BCP</span><br>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                       <a href="http://www.encuentrabcp.com/buscador/" target="_blank"><img src="img/bcp.png" ></a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a href="http://www.interbankagente.pe/Ubicanos" target="_blank"><img src="img/interbank.png" ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--END - Projects list--></div>
+
+
     </div>
 @endsection

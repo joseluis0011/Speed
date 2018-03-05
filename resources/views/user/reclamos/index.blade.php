@@ -46,6 +46,7 @@ START - Controls Above Table
                                                                     <option>Mi Internet Esta Lento</option>
                                                                     <option>No hay Internet</option>
                                                                     <option>Problemas con el Wi-fi</option>
+                                                                    <option>Problemas con el Pago del Internet</option>
                                                                 </select></div>
                                                         </div>
 

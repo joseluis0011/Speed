@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{{config('app.name')}}</title>
 
   <!-- CSS  -->
@@ -18,7 +18,8 @@
     <a id="logo-container" href="#" class="brand-logo" style="font-family: 'Great Vibes', cursive;">{{config('app.name')}}<i class="large material-icons" style="font-size: 50px;">network_check</i></a>
     <div class="nav-wrapper container" >
       <ul class="right hide-on-med-and-down" >
-        <li> <a class="waves-effect waves-light" href="{{route('login')}}"><i class="material-icons">account_circle</i></a></li>
+        <li> <a class="#00bcd4 cyan btn " href="{{route('login')}}"><i class="material-icons right">account_circle</i>Ingresar</a></li>
+
         @if(auth()->check())
         <li>{{auth()->user()->nombre}}</li>
           <li>
@@ -37,6 +38,7 @@
         <li><a href="login">Ingresar</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
     </div>
   </nav>
 </div>
@@ -264,33 +266,51 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
 
 
   <footer class="page-footer teal">
+
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Zonas de Cobertura<i class="small material-icons">map</i></h4>
+        </div>
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">{{config('app.name')}}</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
+    <div class="row">
+        <div class="col l6 s12 center">
+          <h5 class="white-text">Santa Maria <i class="small material-icons">looks_one</i></h5>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.0050450829563!2d-76.92464844117775!3d-12.043173315604243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c6ae9cb96f47%3A0x2ef9393b7d58c7af!2sMercado+Santa+Maria+Vitarte!5e0!3m2!1ses!2spe!4v1520203192668" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+         <br>
+          <i class="small material-icons">location_on</i> Ate-Vitarte
+          <br>
+          <i class="small material-icons">network_check</i>  Viñedos
+          <br>
+          <i class="small material-icons">network_check</i>  Barbadillo
+          <br>
+          <i class="small material-icons">network_check</i>  Ovalo Santa Maria
+          <br>
+          <i class="small material-icons">perm_phone_msg</i>   Telefonos:
+          986166502 --
+          927744328
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
+      <div class="col l6 s12 center">
+        <h5 class="white-text">Maria Claret <i class="small material-icons">looks_two</i></h5>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.2246411960155!2d-76.91525278563597!3d-12.028049991479785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3f9420a4357%3A0xf1b2ecf2fa643286!2sSan+Antonio+Maria+Claret%2C+Cercado+de+Lima!5e0!3m2!1ses!2spe!4v1520205231606" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <br>
+        <i class="small material-icons">location_on</i>Ate-Vitarte
+        <br>
+        <i class="small material-icons">network_check</i>   San Pedro
+        <br>
+        <i class="small material-icons">network_check</i>   1° de Enero
+        <br>
+        <i class="small material-icons">network_check</i>   Javier Eraud
+        <br>
+        <i class="small material-icons">network_check</i>   Olivar
+        <br>
+        <i class="small material-icons">network_check</i>    Jr. el Triunfo
+        <br>
+        <i class="small material-icons">perm_phone_msg</i>  Telefonos:
+        981766260
       </div>
+
+
+    </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
@@ -301,16 +321,17 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="js/materialize.js" type="text/javascript"></script>
+  <script src="js/init.js" type="text/javascript"></script>
+  <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 <script>
   $(document).ready(function(){
      $('.slider').slider({
        height: 650
      });
-      $('.modal').modal();
-       $('select').material_select();
+    $('select').material_select();
+    $('.button-collapse').sideNav();
    });
 </script>
   </body>

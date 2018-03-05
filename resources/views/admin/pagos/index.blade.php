@@ -114,6 +114,7 @@ START - Table with actions
                           <th>Nombre</th>
                           <th>Mes</th>
                           <th>Monto</th>
+                          <th>Fecha</th>
                           <th>Comentario</th>
                           <th>Acciones</th>
                       </tr>
@@ -123,6 +124,7 @@ START - Table with actions
                           <th>Nombre</th>
                           <th>Mes</th>
                           <th>Monto</th>
+                          <th>Fecha</th>
                           <th>Comentario</th>
                           <th>Acciones</th>
                       </tr>

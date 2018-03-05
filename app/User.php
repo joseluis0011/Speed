@@ -27,4 +27,8 @@ class User extends Authenticatable
     public function Persona(){
      return $this->hasMany('App\Persona','usuario_idusuario');
     }
+
+    public function Config(){
+        return $this->hasMany('App\Config','iduser');
+    }
 }

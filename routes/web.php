@@ -13,18 +13,18 @@
 
 Route::get('/', 'PagesController@home');
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin'],function() {
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function() {
     Route::get('posts', 'PostsController@index')->name('admin.posts.index');
     Route::get('notificaciones/password', 'PasswordController@index')->name('admin.notificaciones.password.index');
     Route::get('notificaciones/reclamos', 'ReclamosController@index')->name('admin.notificaciones.reclamos.index');
     Route::get('notificaciones/buzon', 'BuzonController@index')->name('admin.notificaciones.buzon.index');
     Route::get('notificaciones/portal', 'PortalController@index')->name('admin.notificaciones.portal.index');
     Route::get('clientes', 'RegClientController@index')->name('admin.clientes.index');
-   // Route::get('clientes/create', 'RegClientController@create')->name('admin.clientes.create');
+   Route::get('clientes/create', 'RegClientController@create')->name('admin.clientes.create');
     Route::get('administrador', 'RegAdminController@index')->name('admin.administrador.index');
-    //Route::get('administrador/create', 'RegAdminController@create')->name('admin.administrador.create');
+    Route::get('administrador/create', 'RegAdminController@create')->name('admin.administrador.create');
     Route::get('pagos', 'PagosController@index')->name('admin.pagos.index');
-    //Route::get('pagos/create', 'PagosController@create')->name('admin.pagos.create');
+    Route::get('pagos/create', 'PagosController@create')->name('admin.pagos.create');
     Route::get('perfil', 'PerfilController@index')->name('admin.perfil.index');
     Route::get('/', 'AdminController@index')->name('admin');
 
@@ -38,6 +38,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function() {
     Route::post('changePassword','PortalController@changePassword')->name('changePassword');
     Route::post('saveData','PostsController@saveData')->name('saveData');
 
+    // ajax routes
+    Route::get('setConfigUser','AdminController@setConfigUser')->name('setConfigUser');
+    Route::get('getPersona','AdminController@getPersona')->name('getPerson');
+    Route::get('delPersona','AdminController@delPersona')->name('delPersona');
+    Route::post('restore','AdminController@restoreDel')->name('restore');
 
 });
 Route::post('newCliente','Admin\BuzonController@newCliente')->name('newCliente');
@@ -86,4 +91,7 @@ Route::get('update',function (){
 });
 
 */
+
+
+Route::get('test','Admin\AdminController@test');
 

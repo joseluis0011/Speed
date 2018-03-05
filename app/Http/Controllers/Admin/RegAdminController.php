@@ -22,7 +22,7 @@ class RegAdminController extends Controller
   }
   public function create()
   {
-
-    return view('admin.administrador.create');
+      $admin =  $this->repo_admin->listAdmin();
+      return view('admin.administrador.index',compact('admin'));
   }
 }

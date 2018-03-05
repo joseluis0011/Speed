@@ -16,8 +16,8 @@
             <div class="sub-menu-icon"><i class="icon-feather-user"></i></div>
             <div class="sub-menu-i">
                 <ul class="sub-menu">
-                    <li><a href="{{route('admin.clientes.index')}}">Cliente</a></li>
-                    <li><a href="{{route('admin.administrador.index')}}">Administrator</a></li>
+                    <li><a href="{{route('admin.clientes.create')}}">Cliente</a></li>
+                    <li><a href="{{route('admin.administrador.create')}}">Administrator</a></li>
                 </ul>
             </div>
         </div>

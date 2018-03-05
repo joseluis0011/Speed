@@ -22,8 +22,8 @@ class BuzonController extends Controller
     return view('admin.notificaciones.buzon.index',compact('noti'));
   }
   public function newCliente(Request $request){
-      $noty = $this->repo_admin->CreateNewNotification(null,$request['coment']);
-      $this->repo_admin->newBuzonInfo($request,$noty->idnotificaciones);
+      $noty = $this->repo_admin->createNewNotification(null,$request['coment']);
+      $this->repo_admin->createBuzonInfo($request,$noty->idnotificaciones);
       Session::flash('success','Enviado Correctamente');
       return redirect('/');
   }

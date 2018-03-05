@@ -18,7 +18,6 @@ class PagosController extends Controller
     public function index()
   {
     $pay =  $this->repo_admin->listPagos();
-    //  return $pay;
     return view('admin.pagos.index',compact('pay'));
   }
   public function create()
@@ -28,7 +27,7 @@ class PagosController extends Controller
     return view('admin.pagos.create',compact('cli'));
   }
   public function newPago(Request $request){
-      $data =$this->repo_admin->CreatePago($request);
+      $data =$this->repo_admin->createPago($request);
       if($data != null){
           Session::flash('pago_success','Pago Creado Correctamente');
           return back();

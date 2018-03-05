@@ -17,21 +17,27 @@ class RegClientController extends Controller
 
     public function index()
   {
-     $cli = $this->repo_admin->listClienteByAdmin();
-       return view('admin.clientes.index',compact('cli'));
+      $cli = $this->repo_admin->listClienteByAdmin();
+      return view('admin.clientes.index',compact('cli'));
   }
   public function create()
   {
-    return view('admin.clientes.create');
+      $cli = $this->repo_admin->listClienteByAdmin();
+
+      return view('admin.clientes.index',compact('cli'));
   }
 
   public function newuser(Request $request){
+      $typeuser = $request['token_admin'];
      $user = $this->repo_admin->createUserByadmin($request);
       if($this->repo_admin->createClienteByAdmin($request,$user->idusuario)!=null){
-          Session::flash('cli_new','Creado correctamente');
-          return back();
+          Session::flash('success','Creado correctamente');
+          if($typeuser == 1){
+              return redirect('/admin/administrador/');
+          }
+          return redirect('/admin/clientes/');
       }else{
-          Session::flash('cli_new_error','Error no se pudo crear el cliente');
+          Session::flash('error','Error no se pudo crear el cliente');
           return back();
       }
   }

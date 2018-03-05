@@ -13,11 +13,10 @@
     <link href="{{asset('assets/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/bower_components/slick-carousel/slick/slick.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/main4a76.css?version=4.3.0')}}" rel="stylesheet">
-    <link href="{{asset('icon_fonts_assets/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.2.0/css/iziToast.min.css" />
+
 </head>
-<body class="menu-position-side menu-side-left full-screen">
+<body id="conf_fullscream" class="menu-position-side menu-side-left full-screen">
 <div class="all-wrapper solid-bg-all">
     <div class="layout-w">
 <!--------------------
@@ -60,7 +59,7 @@ END - Mobile Menu
 <!--------------------
 START - Main Menu
 -------------------->
-        <div class="menu-w selected-menu-color-light menu-has-selected-link menu-activated-on-click color-scheme-light color-style-default sub-menu-color-light menu-position-side menu-side-left menu-layout-full sub-menu-style-inside">
+        <div id="config_menu" class="{{auth()->user()->Config[0]->value}}">
             <div class="logo-w">
                 <a class="logo" href="/admin">
                     <div class="logo-element"></div>
@@ -88,8 +87,17 @@ START - Main Menu
                         <ul>
                             <li><a href="{{route('admin.perfil.index')}}"><i class="os-icon os-icon-user-male-circle2"></i><span>Perfil</span></a>
                             </li>
+                            <li><a href="{{route('admin.pagos.index')}}"><i class="os-icon os-icon-coins-4"></i><span>Pagos</span></a>
+                            </li>
                             <li><a href="{{route('admin.notificaciones.buzon.index')}}"><i class="os-icon os-icon-others-43"></i><span>Buzon</span></a></li>
-                            <li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Salir</span></a></li>
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                    <i class="os-icon os-icon-signs-11"></i><span>Salir</span></a>
+                                </a>
+                            </li>
+
+                            <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                         </ul>
                     </div>
                 </div>
@@ -105,7 +113,7 @@ END - Main Menu
 <!--------------------
 START - Top Bar
 -------------------->
-            <div class="top-bar color-scheme-light">
+            <div id="conf_topbar" class="top-bar color-scheme-light">
 
                 <div class="top-menu-controls">
                     <div class="element-search autosuggest-search-activator"><input
@@ -115,29 +123,10 @@ START - Messages Link in secondary top menu
 -------------------->
                     <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left"><i
                                 class="os-icon os-icon-mail-14"></i>
-                        <div class="new-messages-count">12</div>
+                        <div class="new-messages-count"><span class="new-messages"></span></div>
                         <div class="os-dropdown light message-list">
-                            <ul>
-                                <li><a href="#">
-                                        <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
-                                        <div class="message-content"><h6 class="message-from">John Mayers</h6><h6
-                                                    class="message-title">Account Update</h6></div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
-                                        <div class="message-content"><h6 class="message-from">Phil Jones</h6><h6
-                                                    class="message-title">Secutiry Updates</h6></div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
-                                        <div class="message-content"><h6 class="message-from">Bekky Simpson</h6><h6
-                                                    class="message-title">Vacation Rentals</h6></div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
-                                        <div class="message-content"><h6 class="message-from">Alice Priskon</h6><h6
-                                                    class="message-title">Payment Confirmation</h6></div>
-                                    </a></li>
+                            <ul class="list-new-message">
+
                             </ul>
                         </div>
                     </div>
@@ -151,7 +140,7 @@ START - Settings Link in secondary top menu
                         <div class="os-dropdown">
                             <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>
                             <ul>
-                                <li><a href="/"><i class="os-icon os-icon-ui-49"></i><span>Profile Settings</span></a>
+                                <li><a href="{{route('admin.perfil.index')}}"><i class="os-icon os-icon-ui-49"></i><span>Profile Settings</span></a>
                                 </li>
                                 <li><a href="/"><i class="os-icon os-icon-grid-10"></i><span>Billing Info</span></a>
                                 </li>
@@ -176,161 +165,10 @@ END - Top Bar
                 <div class="content-box"><!--START - Control panel above projects-->
                     <!--END - Control panel above projects-->
                     @yield('header')
-                    <div class="row">
+
                         @yield('content')
-                    </div>
- <!--------------------
-START - Color Scheme Toggler
--------------------->
-                    <div class="floated-colors-btn second-floated-btn">
-                        <div class="os-toggler-w">
-                            <div class="os-toggler-i">
-                                <div class="os-toggler-pill"></div>
-                            </div>
-                        </div>
-                        <span>Dark </span><span>Colors</span>
-                    </div>
-<!--------------------
-END - Color Scheme Toggler
--------------------->
 
- <!--------------------
-START - Demo Customizer
--------------------->
-                    <div class="floated-customizer-btn third-floated-btn">
-                        <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>
-                        <span>Customizer</span></div>
-                    <div class="floated-customizer-panel">
-                        <div class="fcp-content">
-                            <div class="close-customizer-btn"><i class="os-icon os-icon-x"></i></div>
-                            <div class="fcp-group">
-                                <div class="fcp-group-header">Menu Settings</div>
-                                <div class="fcp-group-contents">
-                                    <div class="fcp-field"><label for="">Menu Position</label><select
-                                                class="menu-position-selector">
-                                            <option value="left">Left</option>
-                                            <option value="right">Right</option>
-                                            <option value="top">Top</option>
-                                        </select></div>
-                                    <div class="fcp-field"><label for="">Menu Style</label><select
-                                                class="menu-layout-selector">
-                                            <option value="compact">Compact</option>
-                                            <option value="full">Full</option>
-                                            <option value="mini">Mini</option>
-                                        </select></div>
-                                    <div class="fcp-field with-image-selector-w"><label for="">With Image</label><select
-                                                class="with-image-selector">
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select></div>
-                                    <div class="fcp-field"><label for="">Menu Color</label>
-                                        <div class="fcp-colors menu-color-selector">
-                                            <div class="color-selector menu-color-selector color-bright selected"></div>
-                                            <div class="color-selector menu-color-selector color-dark"></div>
-                                            <div class="color-selector menu-color-selector color-light"></div>
-                                            <div class="color-selector menu-color-selector color-transparent"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fcp-group">
-                                <div class="fcp-group-header">Sub Menu</div>
-                                <div class="fcp-group-contents">
-                                    <div class="fcp-field"><label for="">Sub Menu Style</label><select
-                                                class="sub-menu-style-selector">
-                                            <option value="flyout">Flyout</option>
-                                            <option value="inside">Inside/Click</option>
-                                            <option value="over">Over</option>
-                                        </select></div>
-                                    <div class="fcp-field"><label for="">Sub Menu Color</label>
-                                        <div class="fcp-colors">
-                                            <div class="color-selector sub-menu-color-selector color-bright selected"></div>
-                                            <div class="color-selector sub-menu-color-selector color-dark"></div>
-                                            <div class="color-selector sub-menu-color-selector color-light"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fcp-group">
-                                <div class="fcp-group-header">Other Settings</div>
-                                <div class="fcp-group-contents">
-                                    <div class="fcp-field"><label for="">Full Screen?</label><select
-                                                class="full-screen-selector">
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select></div>
-                                    <div class="fcp-field"><label for="">Show Top Bar</label><select
-                                                class="top-bar-visibility-selector">
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select></div>
-                                    <div class="fcp-field"><label for="">Above Menu?</label><select
-                                                class="top-bar-above-menu-selector">
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select></div>
-                                    <div class="fcp-field"><label for="">Top Bar Color</label>
-                                        <div class="fcp-colors">
-                                            <div class="color-selector top-bar-color-selector color-bright selected"></div>
-                                            <div class="color-selector top-bar-color-selector color-dark"></div>
-                                            <div class="color-selector top-bar-color-selector color-light"></div>
-                                            <div class="color-selector top-bar-color-selector color-transparent"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
- <!--------------------
-END - Demo Customizer
--------------------->
-<!--------------------
-START - Chat Popup Box
--------------------->
-
-            <div class="floated-chat-btn"><i class="os-icon os-icon-mail-07"></i><span>Demo Chat</span></div>
-                    <div class="floated-chat-w">
-                        <div class="floated-chat-i">
-                            <div class="chat-close"><i class="os-icon os-icon-close"></i></div>
-                            <div class="chat-head">
-                                <div class="user-w with-status status-green">
-                                    <div class="user-avatar-w">
-                                        <div class="user-avatar"><img alt="" src="/assets/img/avatar1.jpg"></div>
-                                    </div>
-                                    <div class="user-name"><h6 class="user-title">Administrador</h6>
-                                        <div class="user-role">Account Manager</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="chat-messages">
-                                <div class="message">
-                                    <div class="message-content">Hola necesitas ayuda..?</div>
-                                </div>
-                                <div class="date-break">Mon 10:20am</div>
-                                <div class="message">
-                                    <div class="message-content">Hi, my name is Mike, I will be happy to assist you
-                                    </div>
-                                </div>
-                                <div class="message self">
-                                    <div class="message-content">Hi, I tried ordering this product and it keeps showing
-                                        me error code.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="chat-controls"><input class="message-input"
-                                                              placeholder="Type your message here..." type="text">
-                                <div class="chat-extra"><a href="#"><span class="extra-tooltip">Attach Document</span><i
-                                                class="os-icon os-icon-documents-07"></i></a><a href="#"><span
-                                                class="extra-tooltip">Insert Photo</span><i
-                                                class="os-icon os-icon-others-29"></i></a><a href="#"><span
-                                                class="extra-tooltip">Upload Video</span><i
-                                                class="os-icon os-icon-ui-51"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-<!--------------------
-END - Chat Popup Box
---------------------> </div>
+                </div>
             </div>
         </div>
     </div>
@@ -338,6 +176,70 @@ END - Chat Popup Box
 </div>
 <script src="{{asset('assets/bower_components/jquery/dist/jquery.min.js')}}"></script>
 @yield('script_top')
+<script>
+    var name='',url= "",display='',html='',idn='';
+    $(document).ready(function () {
+        var nnt = 0,nnt2 = 0,nntg = 0;
+
+        $.get('{{route('getBuzon')}}',function (data) {
+            nntg =  data.length;
+            if(data.length>0){
+                $.each(data ,function (i,d) {
+                    display = d.reclamo;
+                    name = d.nombre;
+                    idn = d.idnotificaciones;
+                    html = '<li><a  onclick="view('+idn+',\'buzon\')"><div class="user-avatar-w">'+
+                            '<img alt="" src="/assets/img/avatar1.jpg"></div>'+
+                            '<div class="message-content">'+
+                            '<h6 class="message-from">'+name+'</h6>'+
+                            '<h6 class="message-title">'+display+'</h6>'+
+                            '</div></a></li>';
+                    $('.list-new-message').append(html)
+                });
+            }
+
+        });
+        $.get('{{route('getnewnotify')}}',function (data) {
+            nntg = nntg + data.length;
+            if(data != null && nntg >0){
+                $('.new-messages').text(nntg);
+                $.each(data,function (i,d) {
+                    name =d.persona.user.nombre+' '+d.persona.user.apellido;
+                    url = (d.typenpti == "1")?'password':'reclamos';
+                    display = d.reclamo;
+                    idn = d.idnotificaciones;
+                    if(d.typenoti === "1"){
+                        nnt = nnt +1;
+                        html = '<li><a  onclick="view('+idn+',\''+url+'\')" ><div class="user-avatar-w">'+
+                                '<img alt="" src="/assets/img/avatar1.jpg"></div>'+
+                                '<div class="message-content">'+
+                                '<h6 class="message-from">'+name+'</h6>'+
+                                '<h6 class="message-title">'+display+'</h6>'+
+                                '</div></a></li>';
+                        $('.list-new-message').append(html)
+                    }else if(d.typenoti === "2"){
+                        nnt2 = nnt2 +1;
+                        html = '<li><a  onclick="view('+idn+',\''+url+'\')" ><div class="user-avatar-w">'+
+                                '<img alt="" src="/assets/img/avatar1.jpg"></div>'+
+                                '<div class="message-content">'+
+                                '<h6 class="message-from">'+name+'</h6>'+
+                                '<h6 class="message-title">'+display+'</h6>'+
+                                '</div></a></li>';
+                        $('.list-new-message').append(html)
+                    }
+                })
+
+            }
+        });
+    });
+
+    function view(id,url) {
+        $.get('{{route('updateview')}}?idusuario='+id,function (data) {
+            var urls = '{{url('/')}}';
+            window.location.href = urls+'/admin/notificaciones/'+url;
+        });
+    }
+</script>
 <script src="{{asset('assets/bower_components/popper.js/dist/umd/popper.min.js')}}"></script>
 <script src="{{asset('assets/bower_components/moment/moment.js')}}"></script>
 <script src="{{asset('assets/bower_components/chart.js/dist/Chart.min.js')}}"></script>
@@ -367,13 +269,8 @@ END - Chat Popup Box
 <script src="{{asset('assets/bower_components/bootstrap/js/dist/popover.js')}}"></script>
 <script src="{{asset('assets/js/demo_customizer4a76.js?version=4.3.0')}}"></script>
 <script src="{{asset('assets/js/main4a76.js?version=4.3.0')}}"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    } );
-</script>
-@include('admin.partials.message')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.2.0/js/iziToast.min.js"></script>
 @yield('script_botton')
+@include('admin.partials.message')
+
 </body>

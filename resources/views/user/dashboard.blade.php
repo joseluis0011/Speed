@@ -81,9 +81,11 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                        <a href="http://www.encuentrabcp.com/buscador/" target="_blank"><img src="img/bcp.png" ></a>
+                                        <p>Recuerde: Cuando haya realizado el deposito enviar la foto del baucher al numero 999999999 via WhatsApp y su DNI</p>
                                     </div>
                                     <div class="col-sm-6">
                                         <a href="http://www.interbankagente.pe/Ubicanos" target="_blank"><img src="img/interbank.png" ></a>
+                                        <p>Recuerde: Cuando haya realizado el deposito enviar una foto del baucher al numero 999999999 via WhatsApp y su DNI</p>
                                     </div>
                                 </div>
                             </div>

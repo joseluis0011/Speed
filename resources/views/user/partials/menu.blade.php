@@ -14,7 +14,7 @@
     </li>
     <li ><a href="{{route('user.pagos.index')}}">
             <div class="icon-w">
-                <div class="os-icon os-icon-mail"></div>
+                <div class="os-icon os-icon-credit-card"></div>
             </div>
             <span>Facturacion</span></a>
         <div class="sub-menu-w">
@@ -25,9 +25,9 @@
             <div class="icon-w">
                 <div class="os-icon os-icon-bell"></div>
             </div>
-            <span>Solicituds</span></a>
+            <span>Solicitudes</span></a>
         <div class="sub-menu-w">
-            <div class="sub-menu-header">Solicituds</div>
+            <div class="sub-menu-header">Solicitudes</div>
             <div class="sub-menu-icon"><i class="os-icon os-icon-bell"></i></div>
             <div class="sub-menu-i">
                 <ul class="sub-menu">

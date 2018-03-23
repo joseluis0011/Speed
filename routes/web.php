@@ -47,7 +47,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
 });
 Route::post('newCliente','Admin\BuzonController@newCliente')->name('newCliente');
 //-------------------------- routes user cliente auth-------------------------------------
-Route::group(['prefix'=>'user','namespace'=>'User'],function(){
+Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth']],function(){
     // route user here
     Route::get('/','UserController@index');
     Route::get('perfil', 'PerfilController@index')->name('user.perfil.index');

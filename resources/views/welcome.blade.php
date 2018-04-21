@@ -284,6 +284,8 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
                   <br>
                   <i class="small material-icons">network_check</i>  Ovalo Santa Maria
                   <br>
+                  <i class="small material-icons">network_check</i>  Virgen del Carmen
+                  <br>
                   <i class="small material-icons">perm_phone_msg</i>   Telefonos:
                   986166502 --
                   927744328
@@ -313,7 +315,7 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
       </div>
       <div class="footer-copyright">
           <div class="container">
-              © 2018-2020 SpeedTest, All rights reserved.
+              © 2018-2020 Speed Wireless Peru, All rights reserved.
           </div>
       </div>
   </footer>

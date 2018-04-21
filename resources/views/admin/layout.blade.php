@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SpeedTest</title>
+    <title>{{config('app.name')}}</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -24,7 +24,7 @@ START - Mobile Menu
 -------------------->
         <div class="menu-mobile menu-activated-on-click color-scheme-dark">
             <div class="mm-logo-buttons-w"><a class="mm-logo" href="/">
-                    <img src="/assets/img/logo.png"><span>SpeedTest</span></a>
+                    <img src="/assets/img/logo.png"><span>{{config('app.name')}}</span></a>
                 <div class="mm-buttons">
                     <div class="content-panel-open">
                         <div class="os-icon os-icon-grid-circles"></div>

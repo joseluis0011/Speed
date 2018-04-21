@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>SpeedTest</title>
+    <title>{{config('app.name')}}</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -25,7 +25,7 @@
         -------------------->
         <div class="menu-mobile menu-activated-on-click color-scheme-dark">
             <div class="mm-logo-buttons-w"><a class="mm-logo" href="/">
-                    <img src="/assets/img/logo.png"><span>SpeedTest</span></a>
+                    <img src="/assets/img/logo.png"><span>{{config('app.name')}}</span></a>
                 <div class="mm-buttons">
                     <div class="content-panel-open">
                         <div class="os-icon os-icon-grid-circles"></div>
@@ -64,7 +64,7 @@ END - Mobile Menu List
             <div class="logo-w">
                 <a class="logo" href="/user">
                     <div class="logo-element"></div>
-                    <div class="logo-label">SpeedTest</div>
+                    <div class="logo-label">{{config('app.name')}}</div>
                 </a></div>
             <div class="logged-user-w avatar-inline">
                 <div class="logged-user-i">

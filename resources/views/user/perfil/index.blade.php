@@ -110,7 +110,7 @@
                                                         class="form-control" disabled placeholder="">
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </fieldset>
                             </form>
                         </div>

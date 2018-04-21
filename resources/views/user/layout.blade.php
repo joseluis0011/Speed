@@ -70,7 +70,7 @@ END - Mobile Menu List
                 <div class="logged-user-i">
                     <div class="avatar-w"><img alt="" src="/assets/img/avatar1.jpg"></div>
                     <div class="logged-user-info-w">
-                        <div class="logged-user-name"></div>
+                        <div class="logged-user-name">{{auth()->user()->nombre}} {{auth()->user()->apellido}}</div>
                         <div class="logged-user-role">Usuario</div>
                     </div>
                     <div class="logged-user-toggler-arrow">
@@ -80,7 +80,7 @@ END - Mobile Menu List
                         <div class="logged-user-avatar-info">
                             <div class="avatar-w"><img alt="" src="/assets/img/avatar1.jpg"></div>
                             <div class="logged-user-info-w">
-                                <div class="logged-user-name"></div>
+                                <div class="logged-user-name">{{auth()->user()->nombre}} {{auth()->user()->apellido}}</div>
                                 <div class="logged-user-role">Usuario</div>
                             </div>
                         </div>

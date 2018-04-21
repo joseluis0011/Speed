@@ -37,8 +37,8 @@ START - Controls Above Table
                 <form method="POST" class="col s12 formnewadmin" action="{{route('newuser')}}">
                   {{ csrf_field() }}
                   <input type="hidden" name="token_admin" value="1">
-                  <input class="f_id_user" type="hidden" name="id_user" >
-                  <input class="f_id_per" type="hidden" name="id_per" >
+                    <input class="f_id_user" type="hidden" name="id_user" >
+                    <input class="f_id_per" type="hidden" name="id_per" >
                   <div class="row">
                     <div class="col-sm-3">
                       <div class="form-group"><label for=""> Nombre</label>
@@ -88,72 +88,59 @@ START - Controls Above Table
           <div class="row">
             <div class="col-sm-6"><a class="btn btn-sm btn-secondary" href="#">Download
                 CSV</a><a class="btn btn-sm btn-secondary" href="#">Archive</a><a class="btn btn-sm btn-danger" href="#">Delete</a></div>
-            <div class="col-sm-6">
-              <form class="form-inline justify-content-sm-end"><input class="form-control form-control-sm rounded bright" placeholder="Search" type="text"><select class="form-control form-control-sm rounded bright">
-                  <option selected="selected" value="">Select Status</option>
-                  <option value="Pending">Pending</option>
-                  <option value="Active">Active</option>
-                  <option value="Cancelled">Cancelled</option>
-                </select></form>
-            </div>
+
           </div>
         </div><!--------------------
 END - Controls Above Table
 ------------------          --><!--------------------
 START - Table with actions
 ------------------  -->
-        <div class="table-responsive">
-          <table class="table table-bordered table-lg table-v2 table-striped">
-            <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Telefono</th>
-              <th>DNI</th>
-              <th>estado</th>
-              <th>Email</th>
-              <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($admin as $ad)
+          <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" >
+              <thead>
               <tr>
-                <td>{{$ad->user->nombre}}</td>
-                <td>{{$ad->user->apellido}}</td>
-                <td>{{$ad->telefono}}</td>
-                <td>{{$ad->user->dni}}</td>
-                <td class="text-center">
-                  <div class="status-pill {{($ad->estado == 'on')?'green':'red'}}" data-title="Complete" data-toggle="tooltip" data-original-title="" title=""></div>
-                </td>
-                <td>{{$ad->email}}</td>
-                <td class="row-actions">
-                  <a onclick="edit({{$ad->idpersona}})" class="primary" href="#"><i class="os-icon os-icon-ui-49"></i></a>
-                  <a onclick="del({{$ad->idpersona}},$(this))" class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
-                </td>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Telefono</th>
+                  <th>DNI</th>
+                  <th>estado</th>
+                  <th>Email</th>
+                  <th></th>
               </tr>
-            @endforeach
-            </tbody>
+              </thead>
+              <tfoot>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Telefono</th>
+                  <th>DNI</th>
+                  <th>estado</th>
+                  <th>Email</th>
+                  <th></th>
+              </tr>
+              </tfoot>
+              <tbody>
+              @foreach($admin as $ad)
+                  <tr>
+                      <td>{{$ad->user->nombre}}</td>
+                      <td>{{$ad->user->apellido}}</td>
+                      <td>{{$ad->telefono}}</td>
+                      <td>{{$ad->user->dni}}</td>
+                      <td class="text-center">
+                          <div class="status-pill {{($ad->estado == 'on')?'green':'red'}}" data-title="Complete" data-toggle="tooltip" data-original-title="" title=""></div>
+                      </td>
+                      <td>{{$ad->email}}</td>
+                      <td class="row-actions">
+                          <a onclick="edit({{$ad->idpersona}})" class="primary" href="#"><i class="os-icon os-icon-ui-49"></i></a>
+                          <a onclick="del({{$ad->idpersona}},$(this))" class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
+                      </td>
+                  </tr>
+              @endforeach
+
+              </tbody>
           </table>
-        </div><!--------------------
-END - Table with actions
-------------------            --><!--------------------
-START - Controls below table
-------------------  -->
-        <div class="controls-below-table">
-          <div class="table-records-info">Showing records 1 - 5</div>
-          <div class="table-records-pages">
-            <ul>
-              <li><a href="#">Previous</a></li>
-              <li><a class="current" href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </div>
-        </div><!--------------------
-END - Controls below table
---------------------></div>
+
+
+       </div>
     </div>
   </div>
         </div>

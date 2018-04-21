@@ -31,63 +31,70 @@ END - Controls Above Table
 ------------------          --><!--------------------
 START - Table with actions
 ------------------  -->
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
+                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" >
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Fecha de Inicio</th>
+                        <th>IP Router</th>
+                        <th>IP antena</th>
+                        <th>Tipo de Antena</th>
+                        <th>Plan</th>
+                        <th>DNI</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Fecha de Inicio</th>
+                        <th>IP Router</th>
+                        <th>IP antena</th>
+                        <th>Tipo de Antena</th>
+                        <th>Plan</th>
+                        <th>DNI</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    @foreach($cli as $ad)
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Direccion</th>
-                            <th>Telefono</th>
-                            <th>Fecha de Inicio</th>
-                            <th>IP Router</th>
-                            <th>IP antena</th>
-                            <th>Tipo de Antena</th>
-                            <th>Plan</th>
-                            <th>DNI</th>
-                            <th>Estado</th>
-                            <th>Acciones</th>
+                            <td>{{$ad->user->nombre}}</td>
+                            <td>{{$ad->user->apellido}}</td>
+                            <td class="text-left">{{$ad->direccion}}</td>
+                            <td>{{$ad->telefono}}</td>
+                            <td>{{$ad->finicio}}</td>
+                            <td>{{$ad->router}}</td>
+                            <td>{{$ad->antena}}</td>
+                            <td>{{$ad->tantena}}</td>
+                            <td>{{$ad->plan}}</td>
+                            <td>{{$ad->user->dni}}</td>
+                            <td class="text-center">
+                                <div class="status-pill {{($ad->estado == 'on')?'green':'red'}}" data-title="Complete" data-toggle="tooltip" data-original-title="" title=""></div>
+                            </td>
+                            <td class="row-actions">
+                                <a onclick="edit({{$ad->idpersona}})" class="primary" href="#"><i class="os-icon os-icon-ui-49"></i></a>
+                                <a onclick="del({{$ad->idpersona}},$(this))" class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
+                            </td>
+
                         </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($cli as $ad)
-                            <tr>
-                                <td>{{$ad->user->nombre}}</td>
-                                <td>{{$ad->user->apellido}}</td>
-                                <td class="text-left">{{$ad->direccion}}</td>
-                                <td>{{$ad->telefono}}</td>
-                                <td>{{$ad->finicio}}</td>
-                                <td>{{$ad->router}}</td>
-                                <td>{{$ad->antena}}</td>
-                                <td>{{$ad->tantena}}</td>
-                                <td>{{$ad->plan}}</td>
-                                <td>{{$ad->user->dni}}</td>
-                                <td class="text-center">
-                                    <div class="status-pill green" data-title="Complete" data-toggle="tooltip" data-original-title="" title=""></div>
-                                </td>
-                                <td class="row-actions"><a href="#"><i class="os-icon os-icon-ui-49"></i></a><a href="#"><i class="os-icon os-icon-grid-10"></i></a><a class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a></td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div><!--------------------
+                    @endforeach
+
+                    </tbody>
+                </table><!--------------------
 END - Table with actions
 ------------------            --><!--------------------
 START - Controls below table
 ------------------  -->
-                <div class="controls-below-table">
-                    <div class="table-records-info">Showing records 1 - 5</div>
-                    <div class="table-records-pages">
-                        <ul>
-                            <li><a href="#">Previous</a></li>
-                            <li><a class="current" href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">Next</a></li>
-                        </ul>
-                    </div>
-                </div><!--------------------
+             <!--------------------
 END - Controls below table
 -------------------->
             </div>
@@ -104,60 +111,66 @@ END - Controls below table
                         <span aria-hidden="true"> &times;</span></button>
                 </div>
                 <div class="modal-body">
+                    <form method="POST" class="col s12 formrestore" action="{{route('restore')}}">
+                        {{ csrf_field() }}
+                        <input class="personaid" type="hidden" name="id_per" >
+                    </form>
                     <form method="POST" class="col s12 fromnewuse"  action="{{route('newuser')}}">
                         {{ csrf_field() }}
+                        <input class="f_id_user" type="hidden" name="id_user" >
+                        <input class="f_id_per" type="hidden" name="id_per" >
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group"><label for=""> Nombre</label>
-                                    <input class="form-control" name="name"
+                                    <input class="form-control f_name" name="name"
                                            type="text"></div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group"><label for="">Apellido</label>
-                                    <input class="form-control" name="apellido"
+                                    <input class="form-control f_apellido" name="apellido"
                                            type="text"></div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group"><label for=""> Email</label>
-                                    <input class="form-control" name="email"
+                                    <input class="form-control f_email" name="email"
                                            type="text"></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group"><label for=""> Direccion</label>
-                                    <input class="form-control" name="direccion"
+                                    <input class="form-control f_direccion" name="direccion"
                                            type="text"></div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group"><label for="">Telefono</label>
-                                    <input class="form-control" name="telefono"
+                                    <input class="form-control f_telefono" name="telefono"
                                            type="number"></div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group"><label for=""> Fecha de Inicio</label>
                                     <div class="date-input"><input name="finicio"
-                                                                   class="single-daterange form-control"
+                                                                   class="single-daterange form-control f_fecha"
                                                                    placeholder="Date of birth" type="text"
-                                                                   value="04/12/1978"></div>
+                                                                   value="04/03/2018"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group"><label for=""> IP de Router</label>
-                                    <input class="form-control" name="router"
+                                    <input class="form-control f_router" name="router"
                                            type="number"></div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group"><label for="">IP de Antena</label>
-                                    <input class="form-control" name="antena"
+                                    <input class="form-control f_antena" name="antena"
                                            type="number"></div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group"><label for=""> Tipo de Antena</label>
                                     <select name="tantena"
-                                            class="form-control">
+                                            class="form-control f_tantena">
                                         <option>NanoLoco M2</option>
                                         <option>NanoLoco M5</option>
                                         <option>Nanostation M2</option>
@@ -178,7 +191,7 @@ END - Controls below table
                             <div class="col-sm-4">
                                 <div class="form-group"><label for=""> Plan</label>
                                     <select name="tplan"
-                                            class="form-control">
+                                            class="form-control f_plan">
                                         <option>Plan 25</option>
                                         <option>Plan 30</option>
                                         <option>Plan 35</option>
@@ -198,12 +211,12 @@ END - Controls below table
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group"><label for="">DNI</label>
-                                    <input class="form-control" name="dni"
+                                    <input class="form-control f_dni" name="dni"
                                            placeholder="Usuario por el cual Ingresara al Portal" type="number"></div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group"><label for="">Contraseña</label>
-                                    <input class="form-control" name="password"
+                                    <input class="form-control f_password" name="password"
                                            placeholder="Contraseña por el cual Ingresara al Portal" type="password"></div>
                             </div>
                             <div class="col-sm-4">
@@ -235,6 +248,67 @@ END - Controls below table
       $('.btn-send').click(function () {
           $('.fromnewuse').submit();
       });
+
+      function edit(id) {
+          $.get('{{route('getPerson')}}?id='+id,function (data) {
+              $('.f_id_per').val(data.idpersona);
+              $('.f_id_user').val(data.user.idusuario);
+              $('.f_name').val(data.user.nombre);
+              $('.f_apellido').val(data.user.apellido);
+              $('.f_telefono').val(data.telefono);
+              $('.f_router').val(data.router);
+              $('.f_dni').val(data.user.dni);
+              $('.f_direccion').val(data.direccion);
+              $('.f_antena').val(data.antena);
+              $('.f_tantena').val(data.tantena);
+              $('.f_email').val(data.email);
+              $('.f_password').val('**********');
+              $('.f_password').prop('disabled',true);
+              $('.f_password').attr('name', '');
+              $('.f_state').val(data.estado);
+              $('.add-cliente-modal').modal('show');
+          })
+      }
+      function del(id,row) {
+          iziToast.question({
+              timeout: 20000,
+              close: false,
+              overlay: true,
+              toastOnce: true,
+              id: 'question',
+              zindex: 999,
+              title: 'Hey',
+              message: 'Deseas eliminar el registro ?',
+              position: 'center',
+              buttons: [
+                  ['<button><b>YES</b></button>', function (instance, toast) {
+                      $.get('{{route('delPersona')}}?id='+id,function (data) {
+                          if(data){
+                              iziToast.success({
+                                  title: 'OK',
+                                  message: 'El usuario fue eliminado temporalmente si deseas restaurar hacer click ',
+                                  buttons: [
+                                      ['<button><b>Aqui</b></button>', function (instance, toast) {
+                                          $('.personaid').val(id);
+                                          $('.formrestore').submit();
+                                          instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                                      }, true]],
+                              });
+                              row.closest('tr').remove();
+                          }
+                          instance.hide(toast,{ transitionOut: 'fadeOut' },'button');
+                      });
+                  }, true],
+                  ['<button>NO</button>', function (instance, toast) {
+                      instance.hide(toast,{ transitionOut: 'fadeOut' },'button');
+                  }]
+              ]
+          });
+
+
+
+      }
     </script>
 
 @endsection

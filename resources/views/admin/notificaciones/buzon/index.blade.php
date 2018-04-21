@@ -51,7 +51,20 @@ START - Table with actions
                                       </tr>
                                       </tfoot>
                                       <tbody>
-
+                                      @foreach($noti as $no)
+                                          <tr>
+                                              <td>{{$no->nombre}}</td>
+                                              <td>{{$no->apellido}}</td>
+                                              <td>{{$no->telefono}}</td>
+                                              <td>{{$no->direccion}}</td>
+                                              <td>{{$no->plan}}</td>
+                                              <td>{{$no->comentario}}</td>
+                                              <td class="row-actions">
+                                                  <a onclick="edit({{$no->idpersona}})" class="primary" href="#"><i class="os-icon os-icon-ui-49"></i></a>
+                                                  <a onclick="del({{$no->idpersona}},$(this))" class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
+                                              </td>
+                                          </tr>
+                                      @endforeach
                                       </tbody>
                                   </table><!--------------------
 END - Table with actions
@@ -63,4 +76,25 @@ END - Table with actions
           </div>
       </div>
 
+@endsection
+@section('script_botton')
+    <script>
+        function edit(id) {
+            $.get('{{route('getPerson')}}?id='+id,function (data) {
+                $('.f_id_per').val(data.idpersona);
+                $('.f_id_user').val(data.user.idusuario);
+                $('.f_name').val(data.user.nombre);
+                $('.f_apellido').val(data.user.apellido);
+                $('.f_telefono').val(data.telefono);
+                $('.f_dni').val(data.user.dni);
+                $('.f_email').val(data.email);
+                $('.f_password').val('**********');
+                $('.f_password').prop('disabled',true);
+                $('.f_password').attr('name', '');
+                $('.f_state').val(data.estado);
+                $('.add-admin-modal').modal('show');
+            })
+        }
+
+    </script>
 @endsection

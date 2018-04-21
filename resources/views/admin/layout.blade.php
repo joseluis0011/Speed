@@ -14,7 +14,7 @@
     <link href="{{asset('assets/bower_components/slick-carousel/slick/slick.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/main4a76.css?version=4.3.0')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.2.0/css/iziToast.min.css" />
-
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body id="conf_fullscream" class="menu-position-side menu-side-left full-screen">
 <div class="all-wrapper solid-bg-all">
@@ -38,7 +38,8 @@ START - Mobile Menu
                 <div class="logged-user-w">
                     <div class="avatar-w"><img alt="" src="/assets/img/avatar1.jpg"></div>
                     <div class="logged-user-info-w">
-                        <div class="logged-user-name">{{auth()->user()->nombre}}</div>
+
+                        <div class="logged-user-name"></div>
                         <div class="logged-user-role">Administrator</div>
                     </div>
                 </div>
@@ -270,6 +271,13 @@ END - Top Bar
 <script src="{{asset('assets/js/demo_customizer4a76.js?version=4.3.0')}}"></script>
 <script src="{{asset('assets/js/main4a76.js?version=4.3.0')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.2.0/js/iziToast.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
 @yield('script_botton')
 @include('admin.partials.message')
 

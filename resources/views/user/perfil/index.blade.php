@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-sm-5">
                     <div class="user-profile compact">
-                        <div class="up-head-w" style="background-image:url(assets/img/profile_bg1.jpg)">
+                        <div class="up-head-w" style="background-image:url({{asset('assets/img/profile_bg1.jpg')}})">
                             <div class="up-social"><a href="#"><i class="os-icon os-icon-twitter"></i></a><a
                                         href="#"><i class="os-icon os-icon-facebook"></i></a></div>
                             <div class="up-main-info"><h2 class="up-header">John Mayers</h2><h6
@@ -74,21 +74,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group"><label for=""> Direccion</label><input
-                                            class="form-control" data-error="Your email address is invalid"
-                                            placeholder="Enter email" required="required" type="email">
+                                            class="form-control" disabled
+                                            placeholder="" >
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group"><label for=""> Telefono</label><input
-                                                    class="form-control" data-minlength="6" placeholder="Password"
-                                                    required="required" type="password">
+                                                    class="form-control" placeholder="" disabled
+                                                   >
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group"><label for="">Fecha de Inicio</label><input
-                                                    class="form-control"
-                                                    data-match-error="Passwords don&#39;t match"
-                                                    type="password">
+                                                    class="form-control" disabled placeholder="">
                                         </div>
                                     </div>
                                 </div>
@@ -97,27 +95,22 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group"><label for=""> Tipo de Antena</label><input
-                                                        class="form-control"
-                                                        placeholder="First Name" required="required" type="text">
+                                                        class="form-control" disabled placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group"><label for="">Plan</label><input
-                                                        class="form-control"
-                                                        placeholder="Last Name" required="required" type="text">
+                                                        class="form-control" disabled placeholder="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group"><label for=""> Estado</label><input
-                                                        class="form-control"
-                                                        placeholder="Last Name" required="required" type="text">
+                                                        class="form-control" disabled placeholder="">
                                             </div>
                                         </div>
-                                    </div>
-
-
+                                    </div> 
                                 </fieldset>
                             </form>
                         </div>

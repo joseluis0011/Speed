@@ -13,11 +13,11 @@
       <div class="row">
         <div class="col-sm-5">
           <div class="user-profile compact">
-            <div class="up-head-w" style="background-image:url(assets/img/profile_bg1.jpg)">
+            <div class="up-head-w" style="background-image:url({{asset('assets/img/profile_bg1.jpg')}})">
               <div class="up-social"><a href="#"><i class="os-icon os-icon-twitter"></i></a><a
                         href="#"><i class="os-icon os-icon-facebook"></i></a></div>
-              <div class="up-main-info"><h2 class="up-header">John Mayers</h2><h6
-                        class="up-sub-header">Product Designer at Facebook</h6></div>
+              <div class="up-main-info"><h2 class="up-header">{{$profile->nombre}}</h2><h6
+                        class="up-sub-header"></h6></div>
               <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="decor" width="842px" height="219px"
                    viewBox="0 0 842 219" preserveAspectRatio="xMaxYMax meet"
                    version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -73,22 +73,33 @@
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-sm-6">
                 <div class="form-group"><label for=""> Direccion</label><input
-                          class="form-control" data-error="Your email address is invalid"
-                          placeholder="Enter email" required="required" type="email">
+                          class="form-control" disabled
+                          placeholder="{{$profile->persona[0]->direccion}}" >
                 </div>
+                    </div>
+                  <div class="col-sm-6">
+                    <div class="form-group"><label for=""> DNI</label><input
+                              class="form-control" disabled
+                              placeholder="{{$profile->dni}}" >
+                    </div>
+                </div>
+                  </div>
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group"><label for=""> Telefono</label><input
-                              class="form-control" data-minlength="6" placeholder="Password"
-                              required="required" type="password">
+                              class="form-control"  disabled
+                              placeholder="{{$profile->persona[0]->telefono}}"
+                              >
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group"><label for="">Fecha de Inicio</label><input
                               class="form-control"
-                              data-match-error="Passwords don&#39;t match"
-                              type="password">
+                              disabled
+                              placeholder="{{$profile->persona[0]->finicio}}">
                     </div>
                   </div>
                 </div>
@@ -98,13 +109,15 @@
                     <div class="col-sm-6">
                       <div class="form-group"><label for=""> Tipo de Antena</label><input
                                 class="form-control"
-                                placeholder="First Name" required="required" type="text">
+                                disabled
+                                placeholder="{{$profile->persona[0]->tantena}}">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group"><label for="">Plan</label><input
                                 class="form-control"
-                                placeholder="Last Name" required="required" type="text">
+                                disabled
+                                placeholder="{{$profile->persona[0]->plan}}">
                       </div>
                     </div>
                   </div>
@@ -112,7 +125,8 @@
                     <div class="col-sm-6">
                       <div class="form-group"><label for=""> Estado</label><input
                                 class="form-control"
-                                placeholder="Last Name" required="required" type="text">
+                                disabled
+                                placeholder="{{($profile->persona[0]->estado == '1')?'Activo':'Desactivo'}}">
                       </div>
                     </div>
                   </div>

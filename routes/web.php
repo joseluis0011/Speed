@@ -38,6 +38,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
     Route::post('changePassword','PortalController@changePassword')->name('changePassword');
     Route::post('saveData','PostsController@saveData')->name('saveData');
 
+
     // ajax routes
     Route::get('setConfigUser','AdminController@setConfigUser')->name('setConfigUser');
     Route::get('getPersona','AdminController@getPersona')->name('getPerson');

@@ -243,12 +243,12 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
           <div class="input-field col s6">
             <select name="tplan">
               <option value="" disabled selected>Eliga el Plan</option>
-              <option value="1">Plan 35</option>
-              <option value="2">Plan 40</option>
-              <option value="3">Plan 50</option>
-              <option value="4">Plan 60</option>
-              <option value="5">Plan 70</option>
-              <option value="6">Plan 80</option>
+              <option value="35">Plan 35</option>
+              <option value="40">Plan 40</option>
+              <option value="50">Plan 50</option>
+              <option value="60">Plan 60</option>
+              <option value="70">Plan 70</option>
+              <option value="80">Plan 80</option>
             </select>
             <label>Eliga el Plan a Contratar</label>
           </div>
@@ -264,59 +264,58 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
 
 
 
-
   <footer class="page-footer teal">
 
-        <div class="col s12 center">
+      <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>Zonas de Cobertura<i class="small material-icons">map</i></h4>
-        </div>
-    <div class="container">
-    <div class="row">
-        <div class="col l6 s12 center">
-          <h5 class="white-text">Santa Maria <i class="small material-icons">looks_one</i></h5>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.0050450829563!2d-76.92464844117775!3d-12.043173315604243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c6ae9cb96f47%3A0x2ef9393b7d58c7af!2sMercado+Santa+Maria+Vitarte!5e0!3m2!1ses!2spe!4v1520203192668" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-         <br>
-          <i class="small material-icons">location_on</i> Ate-Vitarte
-          <br>
-          <i class="small material-icons">network_check</i>  Viñedos
-          <br>
-          <i class="small material-icons">network_check</i>  Barbadillo
-          <br>
-          <i class="small material-icons">network_check</i>  Ovalo Santa Maria
-          <br>
-          <i class="small material-icons">perm_phone_msg</i>   Telefonos:
-          986166502 --
-          927744328
-        </div>
-      <div class="col l6 s12 center">
-        <h5 class="white-text">Maria Claret <i class="small material-icons">looks_two</i></h5>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.2246411960155!2d-76.91525278563597!3d-12.028049991479785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3f9420a4357%3A0xf1b2ecf2fa643286!2sSan+Antonio+Maria+Claret%2C+Cercado+de+Lima!5e0!3m2!1ses!2spe!4v1520205231606" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-        <br>
-        <i class="small material-icons">location_on</i>Ate-Vitarte
-        <br>
-        <i class="small material-icons">network_check</i>   San Pedro
-        <br>
-        <i class="small material-icons">network_check</i>   1° de Enero
-        <br>
-        <i class="small material-icons">network_check</i>   Javier Eraud
-        <br>
-        <i class="small material-icons">network_check</i>   Olivar
-        <br>
-        <i class="small material-icons">network_check</i>    Jr. el Triunfo
-        <br>
-        <i class="small material-icons">perm_phone_msg</i>  Telefonos:
-        981766260
       </div>
-
-
-    </div>
-    </div>
-    <div class="footer-copyright">
       <div class="container">
-      © 2018-2020 SpeedTest, All rights reserved.
+          <div class="row">
+              <div class="col l6 s12 center">
+                  <h5 class="white-text">Santa Maria <i class="small material-icons">looks_one</i></h5>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.0050450829563!2d-76.92464844117775!3d-12.043173315604243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c6ae9cb96f47%3A0x2ef9393b7d58c7af!2sMercado+Santa+Maria+Vitarte!5e0!3m2!1ses!2spe!4v1520203192668" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  <br>
+                  <i class="small material-icons">location_on</i> Ate-Vitarte
+                  <br>
+                  <i class="small material-icons">network_check</i>  Viñedos
+                  <br>
+                  <i class="small material-icons">network_check</i>  Barbadillo
+                  <br>
+                  <i class="small material-icons">network_check</i>  Ovalo Santa Maria
+                  <br>
+                  <i class="small material-icons">perm_phone_msg</i>   Telefonos:
+                  986166502 --
+                  927744328
+              </div>
+              <div class="col l6 s12 center">
+                  <h5 class="white-text">Maria Claret <i class="small material-icons">looks_two</i></h5>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.2246411960155!2d-76.91525278563597!3d-12.028049991479785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3f9420a4357%3A0xf1b2ecf2fa643286!2sSan+Antonio+Maria+Claret%2C+Cercado+de+Lima!5e0!3m2!1ses!2spe!4v1520205231606" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  <br>
+                  <i class="small material-icons">location_on</i>Ate-Vitarte
+                  <br>
+                  <i class="small material-icons">network_check</i>   San Pedro
+                  <br>
+                  <i class="small material-icons">network_check</i>   1° de Enero
+                  <br>
+                  <i class="small material-icons">network_check</i>   Javier Eraud
+                  <br>
+                  <i class="small material-icons">network_check</i>   Olivar
+                  <br>
+                  <i class="small material-icons">network_check</i>    Jr. el Triunfo
+                  <br>
+                  <i class="small material-icons">perm_phone_msg</i>  Telefonos:
+                  981766260
+              </div>
+
+
+          </div>
       </div>
-    </div>
+      <div class="footer-copyright">
+          <div class="container">
+              © 2018-2020 SpeedTest, All rights reserved.
+          </div>
+      </div>
   </footer>
 
 

@@ -12,38 +12,32 @@
         <div class="col-lg-12">
           <div class="element-wrapper"><h6 class="element-header">Cambio de Contraseña de su Portal</h6>
             <div class="element-box">
-              <form><h5 class="form-header">Default Layout</h5>
+              <form method="POST" class="col s12"  action="{{route('changePassword')}}">
+                {{ csrf_field() }}
+                <h5 class="form-header">Default Layout</h5>
                 <div class="form-desc">Discharge best employed your phase each the of shine. Be
                   met even reason consider logbook redesigns. Never a turned interfaces among
                   asking
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
-                    <div class="form-group"><label for=""> Usuario</label><input
-                              class="form-control" placeholder="este campo tiene que estar desabilitado" type="text" value="">
+                    <div class="form-group"><label for="">Contraseña Actual</label><input
+                              class="form-control" placeholder="Password" type="password" name="password">
                     </div>
                   </div>
                   <div class="col-sm-6">
-                    <div class="form-group"><label for="">DNI</label><input
-                              class="form-control" placeholder="este campo tiene que estar desabilitado" type="password">
+                    <div class="form-group"><label for="">Nueva Contraseña</label><input name="new_password"
+                              class="form-control" placeholder="Password" type="password">
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group"><label for=""> Nueva Contraseña</label><input
-                              class="form-control" placeholder="Password" type="password">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-group"><label for="">Repita la Nueva Contraseña</label><input
-                              class="form-control" placeholder="Password" type="password">
-                    </div>
-                  </div>
-                </div>
+                  <div class="col s12 center">
                 <div class="form-buttons-w">
-                  <button class="btn btn-primary" type="submit"> Submit</button>
+                  <button class="btn btn-primary" type="submit"> Cambiar</button>
                 </div>
+                    </div>
+                  </div>
               </form>
             </div>
           </div>

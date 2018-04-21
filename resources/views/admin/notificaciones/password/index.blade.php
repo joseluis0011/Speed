@@ -49,6 +49,7 @@ START - Table with actions
                                     </tr>
                                     </tfoot>
                                     <tbody>
+
                                     </tbody>
                                 </table><!--------------------
 END - Table with actions

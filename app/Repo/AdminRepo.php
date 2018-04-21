@@ -19,6 +19,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class AdminRepo
 {
@@ -167,6 +168,9 @@ class AdminRepo
         $model = $this->getUser($data['id_user']);
         if(!$model){
             $model = new $this->model_user;
+            Session::flash('success','Creado correctamente');
+        }else{
+            Session::flash('success','Actualizado correctamente');
         }
         $model->nombre = $data['name'];
         $model->dni = $data['dni'];

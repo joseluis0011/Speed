@@ -31,7 +31,7 @@ class RegClientController extends Controller
       $typeuser = $request['token_admin'];
      $user = $this->repo_admin->createUserByadmin($request);
       if($this->repo_admin->createClienteByAdmin($request,$user->idusuario)!=null){
-          Session::flash('success','Creado correctamente');
+
           if($typeuser == 1){
               return redirect('/admin/administrador/');
           }

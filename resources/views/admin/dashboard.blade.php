@@ -6,13 +6,13 @@
                 <li class="nav-item"><a aria-expanded="false" class="nav-link" data-toggle="tab"
                                         href="#tab_overview"> Active</a></li>
             </ul>
-            <ul class="nav nav-pills smaller d-none d-lg-flex">
+         <!--   <ul class="nav nav-pills smaller d-none d-lg-flex">
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#"> Today</a></li>
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#"> 7 Days</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#"> 14 Days</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#"> Last Month</a></li>
-            </ul>
+            </ul> -->
         </div>
     </div>
 @stop

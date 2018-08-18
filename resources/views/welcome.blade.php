@@ -273,41 +273,41 @@ si usted desea este Plan porfavor llene el formulario de abajo o llamenos a los 
       <div class="container">
           <div class="row">
               <div class="col l6 s12 center">
-                  <h5 class="white-text">Santa Maria <i class="small material-icons">looks_one</i></h5>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.0050450829563!2d-76.92464844117775!3d-12.043173315604243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c6ae9cb96f47%3A0x2ef9393b7d58c7af!2sMercado+Santa+Maria+Vitarte!5e0!3m2!1ses!2spe!4v1520203192668" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-                  <br>
+                  <h5 class="white-text">xxxxxx <i class="small material-icons">looks_one</i></h5>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d499488.88286924723!2d-77.26798390823734!3d-12.0258269654704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses-419!2spe!4v1534437301295" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                   <br>
                   <i class="small material-icons">location_on</i> Ate-Vitarte
                   <br>
-                  <i class="small material-icons">network_check</i>  Viñedos
+                  <i class="small material-icons">network_check</i>  xxxxxx
                   <br>
-                  <i class="small material-icons">network_check</i>  Barbadillo
+                  <i class="small material-icons">network_check</i>  xxxxxxxx
                   <br>
-                  <i class="small material-icons">network_check</i>  Ovalo Santa Maria
+                  <i class="small material-icons">network_check</i>  xxxxxxx
                   <br>
-                  <i class="small material-icons">network_check</i>  Virgen del Carmen
+                  <i class="small material-icons">network_check</i>  xxxxxxxx
                   <br>
                   <i class="small material-icons">perm_phone_msg</i>   Telefonos:
-                  986166502 --
-                  927744328
+                  xxxxxxxxxx --
+                  xxxxxxxxx
               </div>
               <div class="col l6 s12 center">
-                  <h5 class="white-text">Maria Claret <i class="small material-icons">looks_two</i></h5>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.2246411960155!2d-76.91525278563597!3d-12.028049991479785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3f9420a4357%3A0xf1b2ecf2fa643286!2sSan+Antonio+Maria+Claret%2C+Cercado+de+Lima!5e0!3m2!1ses!2spe!4v1520205231606" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-                  <br>
+                  <h5 class="white-text">xxxx <i class="small material-icons">looks_two</i></h5>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.2247173321434!2d-76.91525278575479!3d-12.028044744826024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3f9420a4357%3A0xf1b2ecf2fa643286!2sSan+Antonio+Maria+Claret%2C+Cercado+de+Lima!5e0!3m2!1ses-419!2spe!4v1534620560173" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <br>
                   <i class="small material-icons">location_on</i>Ate-Vitarte
                   <br>
-                  <i class="small material-icons">network_check</i>   San Pedro
+                  <i class="small material-icons">network_check</i>   xxxxx
                   <br>
-                  <i class="small material-icons">network_check</i>   1° de Enero
+                  <i class="small material-icons">network_check</i>   xxxxxxx
                   <br>
-                  <i class="small material-icons">network_check</i>   Javier Eraud
+                  <i class="small material-icons">network_check</i>   xxxxxx
                   <br>
-                  <i class="small material-icons">network_check</i>   Olivar
+                  <i class="small material-icons">network_check</i>   xxxxxx
                   <br>
-                  <i class="small material-icons">network_check</i>    Jr. el Triunfo
+                  <i class="small material-icons">network_check</i>   xxxxxx
                   <br>
                   <i class="small material-icons">perm_phone_msg</i>  Telefonos:
-                  981766260
+                  xxxxxxxxx
               </div>
 
 

@@ -15,16 +15,8 @@
                 <div class="controls-above-table">
                     <div class="row">
                         <div class="col-sm-6">    <button class="mr-2 mb-2 btn btn-primary" data-target=".add-cliente-modal"
-                                                          data-toggle="modal"> Agregar
-                            </button><a class="btn btn-sm btn-secondary" href="#">Archive</a><a class="btn btn-sm btn-danger" href="#">Delete</a></div>
-                        <div class="col-sm-6">
-                            <form class="form-inline justify-content-sm-end"><input class="form-control form-control-sm rounded bright" placeholder="Search" type="text"><select class="form-control form-control-sm rounded bright">
-                                    <option selected="selected" value="">Select Status</option>
-                                    <option value="Pending">Pending</option>
-                                    <option value="Active">Active</option>
-                                    <option value="Cancelled">Cancelled</option>
-                                </select></form>
-                        </div>
+                                                          data-toggle="modal"> AGREGAR
+                            </button><a class="btn btn-sm btn-secondary" href="#">Descargar en Excel</a><a class="btn btn-sm btn-danger" href="#">Imprimir</a></div>
                     </div>
                 </div><!--------------------
 END - Controls Above Table
@@ -220,10 +212,12 @@ END - Controls below table
                                            placeholder="Contraseña por el cual Ingresara al Portal" type="password"></div>
                             </div>
                             <div class="col-sm-4">
+                                <div class="form-group"><label for=""> Estado</label>
                                 <select name="state" class="form-control f_state">
                                     <option value="on" selected>Activo</option>
                                     <option value="off">Inactivo</option>
                                 </select>
+                                    </div>
                             </div>
 
                         </div>

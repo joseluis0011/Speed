@@ -108,8 +108,6 @@ END - Mobile Menu List
             <div class="top-bar color-scheme-light">
 
                 <div class="top-menu-controls">
-                    <div class="element-search autosuggest-search-activator"><input
-                                placeholder="Start typing to search..." type="text"></div>
                     <!--------------------
                    START - Messages Link in secondary top menu
                    -------------------->
@@ -146,7 +144,7 @@ END - Mobile Menu List
                     --------------------><!--------------------
 START - Settings Link in secondary top menu
 -------------------->
-                    <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
+            <!--        <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
                         <i class="os-icon os-icon-ui-46"></i>
                         <div class="os-dropdown">
                             <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>

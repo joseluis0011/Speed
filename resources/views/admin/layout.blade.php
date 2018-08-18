@@ -88,9 +88,6 @@ START - Main Menu
                         <ul>
                             <li><a href="{{route('admin.perfil.index')}}"><i class="os-icon os-icon-user-male-circle2"></i><span>Perfil</span></a>
                             </li>
-                            <li><a href="{{route('admin.pagos.index')}}"><i class="os-icon os-icon-coins-4"></i><span>Pagos</span></a>
-                            </li>
-                            <li><a href="{{route('admin.notificaciones.buzon.index')}}"><i class="os-icon os-icon-others-43"></i><span>Buzon</span></a></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                                     <i class="os-icon os-icon-signs-11"></i><span>Salir</span></a>
                                 </a>
@@ -117,17 +114,30 @@ START - Top Bar
             <div id="conf_topbar" class="top-bar color-scheme-light">
 
                 <div class="top-menu-controls">
-                    <div class="element-search autosuggest-search-activator"><input
-                                placeholder="Start typing to search..." type="text"></div>
+
  <!--------------------
 START - Messages Link in secondary top menu
 -------------------->
                     <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left"><i
                                 class="os-icon os-icon-mail-14"></i>
-                        <div class="new-messages-count"><span class="new-messages"></span></div>
+                        <div class="new-messages-count"><span id="view_count_notify" class="new badge red"></span></div>
                         <div class="os-dropdown light message-list">
                             <ul class="list-new-message">
-
+                                <li {{request()->is('admin/notificaciones/password')?'class=active':''}}>
+                                    <a href="{{route('admin.notificaciones.password.index')}}">
+                                        C. contraseña Wi-fi
+                                        <span style="display: none" id="typenoty_1" class="new badge blue">4</span> </a>
+                                </li>
+                                <li {{request()->is('admin/notificaciones/reclamos')?'class=active':''}}>
+                                    <a href="{{route('admin.notificaciones.reclamos.index')}}">
+                                        Reclamos
+                                        <span style="display: none" id="typenoty_2" class="new badge blue">4</span> </a>
+                                </li>
+                                <li {{request()->is('admin/notificaciones/buzon')?'class=active':''}}>
+                                    <a href="{{route('admin.notificaciones.buzon.index')}}">
+                                        buzon de entrada
+                                        <span style="display: none" id="typenoty_3" class="new badge blue">4</span></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -136,10 +146,10 @@ END - Messages Link in secondary top menu
 --------------------><!--------------------
 START - Settings Link in secondary top menu
 -------------------->
-                    <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
+           <!--         <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
                         <i class="os-icon os-icon-ui-46"></i>
                         <div class="os-dropdown">
-                            <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>
+                            <div class="icon-w"><a href="{{route('admin.posts.index')}}"></a><i class="os-icon os-icon-ui-46"></i></div>
                             <ul>
                                 <li><a href="{{route('admin.perfil.index')}}"><i class="os-icon os-icon-ui-49"></i><span>Profile Settings</span></a>
                                 </li>

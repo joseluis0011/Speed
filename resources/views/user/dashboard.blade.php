@@ -6,13 +6,13 @@
                 <li class="nav-item"><a aria-expanded="false" class="nav-link" data-toggle="tab"
                                         href="#tab_overview"> Active</a></li>
             </ul>
-            <ul class="nav nav-pills smaller d-none d-lg-flex">
+       <!--     <ul class="nav nav-pills smaller d-none d-lg-flex">
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#"> Today</a></li>
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#"> 7 Days</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#"> 14 Days</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#"> Last Month</a></li>
-            </ul>
+            </ul> -->
         </div>
     </div>
 @stop
@@ -82,7 +82,7 @@
                                     <div class="col-sm-6">
                                        <a href="http://www.encuentrabcp.com/buscador/" target="_blank"><img src="img/bcp.png" ></a>
                                         <p>Recuerde: Cuando haya realizado el deposito enviar la foto del baucher al numero via WhatsApp y su DNI</p>
-                                        <i class="os-icon os-icon-check"></i> <span>Para los Clientes de Santa Maria 981766260</span><br>
+                                        <i class="os-icon os-icon-check"></i> <span>Para los Clientes de xxxx 9999999999</span><br>
                                     </div>
                                     <div class="col-sm-6">
                                         <a href="http://www.interbankagente.pe/Ubicanos" target="_blank"><img src="img/interbank.png" ></a>

@@ -29,116 +29,133 @@ START - Controls Above Table
                           <span aria-hidden="true"> &times;</span></button>
                       </div>
                       <div class="modal-body">
-                        <form>
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <div class="form-group"><label for=""> Usuario</label><select
-                                        class="form-control">
-                                  <option>user1</option>
-                                  <option>user1</option>
-                                </select></div>
-                            </div>
-                            <div class="col-sm-6">
-                              <div class="form-group"><label for=""> Mes</label><select
-                                        class="form-control">
-                                  <option>Enero</option>
-                                  <option>Febrero</option>
-                                  <option>Marzo</option>
-                                  <option>Abril</option>
-                                  <option>Mayo</option>
-                                  <option>Junio</option>
-                                  <option>Julio</option>
-                                  <option>Agosto</option>
-                                  <option>Setiembre</option>
-                                  <option>Octubre</option>
-                                  <option>Noviembre</option>
-                                  <option>Diciembre</option>
-                                </select></div>
-                            </div>
-
-                          </div>
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <div class="form-group"><label for=""> Monto</label><select
-                                        class="form-control">
-                                  <option>S/.25</option>
-                                  <option>S/.30</option>
-                                  <option>S/.35</option>
-                                  <option>S/.40</option>
-                                  <option>S/.45</option>
-                                  <option>S/.50</option>
-                                  <option>S/.55</option>
-                                  <option>S/.60</option>
-                                  <option>S/.65</option>
-                                  <option>S/.70</option>
-                                  <option>S/.75</option>
-                                  <option>S/.80</option>
-                                  <option>S/.85</option>
-                                  <option>S/.90</option>
-                                  <option>S/.100</option>
-                                </select></div>
-                            </div>
-                            <div class="col-sm-6">
-                              <div class="form-group"><label for=""> Comentario</label><input class="form-control" name="telefono"
-                                                                                              type="number"></div>
-                            </div>
-                          </div>
-
-
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                          Close
-                        </button>
-                        <button class="btn btn-primary" type="button"> Guardar</button>
-                      </div>
-                    </div>
-                  </div>
+                        <form method="POST" class="col s12"  action="{{route('newpago')}}">
+                            {{ csrf_field() }}
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group"><label for=""> Cliente</label>
+                      <select class="form-control" name="idpersona">
+                          <option value="" disabled selected>Eliga el Usuario</option>
+                          @foreach($cli as $cl)
+                              <option class="badge-dni" value="{{$cl->idpersona}}">{{$cl->user->nombre}} -- DNI -- {{$cl->user->dni}}</option>
+                          @endforeach
+                    </select></div>
                 </div>
-                <!--END MODAL -->
-                  <div class="controls-above-table">
-                      <div class="row">
-                          <div class="col-sm-6"><a class="btn btn-sm btn-secondary" href="#">Download
-                                  en Excel</a><a class="btn btn-sm btn-danger" href="#">Imprimir</a></div>
+                <div class="col-sm-6">
+                  <div class="form-group"><label for=""> Mes</label>
+                      <select class="form-control" name="mes">
+                          <option value="" disabled selected>Eliga el Mes</option>
+                      <option>Enero</option>
+                      <option>Febrero</option>
+                      <option>Marzo</option>
+                      <option>Abril</option>
+                      <option>Mayo</option>
+                      <option>Junio</option>
+                      <option>Julio</option>
+                      <option>Agosto</option>
+                      <option>Setiembre</option>
+                      <option>Octubre</option>
+                      <option>Noviembre</option>
+                      <option>Diciembre</option>
+                    </select></div>
+                </div>
 
-                      </div>
-                  </div><!--------------------
-END - Controls Above Table
-------------------          --><!--------------------
-START - Table with actions
-------------------  -->
-                  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" >
-                      <thead>
-                      <tr>
-                          <th>Nombre</th>
-                          <th>Mes</th>
-                          <th>Monto</th>
-                          <th>Fecha</th>
-                          <th>Comentario</th>
-                          <th>Acciones</th>
-                      </tr>
-                      </thead>
-                      <tfoot>
-                      <tr>
-                          <th>Nombre</th>
-                          <th>Mes</th>
-                          <th>Monto</th>
-                          <th>Fecha</th>
-                          <th>Comentario</th>
-                          <th>Acciones</th>
-                      </tr>
-                      </tfoot>
-                      <tbody>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group"><label for=""> Monto</label>
+                      <select name="monto"
+                            class="form-control">
+                          <option value="" disabled selected>Eliga el Monto</option>
+                      <option>S/.25</option>
+                      <option>S/.30</option>
+                      <option>S/.35</option>
+                      <option>S/.40</option>
+                      <option>S/.45</option>
+                      <option>S/.50</option>
+                      <option>S/.55</option>
+                      <option>S/.60</option>
+                      <option>S/.65</option>
+                      <option>S/.70</option>
+                      <option>S/.75</option>
+                      <option>S/.80</option>
+                      <option>S/.85</option>
+                      <option>S/.90</option>
+                      <option>S/.100</option>
+                    </select></div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group"><label for=""> Comentario</label><input class="form-control" name="comentario"
+                                                                                  type="text"></div>
+                </div>
+              </div>
 
-                      </tbody>
-                  </table><!--------------------
-END - Table with actions
-------------------            --> </div>
-            </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-dismiss="modal" type="button">
+              Close
+            </button>
+            <button class="btn btn-primary" type="submit" name="action"> Enviar</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  @endsection 
+    <!--END MODAL -->
+      <div class="controls-above-table">
+          <div class="row">
+              <div class="col-sm-6"><a class="btn btn-sm btn-secondary" href="#">Descargar en Excel</a><a class="btn btn-sm btn-secondary" href="#">Imprimir</a></div>
+
+          </div>
+      </div><!--------------------
+END - Controls Above Table
+------------------          --><!--------------------
+START - Table with actions
+------------------  -->
+      <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" >
+          <thead>
+          <tr>
+              <th>Cliente</th>
+              <th>Mes</th>
+              <th>Monto</th>
+              <th>Fecha</th>
+              <th>Comentario</th>
+              <th>Acciones</th>
+          </tr>
+          </thead>
+          <tfoot>
+          <tr>
+              <th>Cliente</th>
+              <th>Mes</th>
+              <th>Monto</th>
+              <th>Fecha</th>
+              <th>Comentario</th>
+              <th>Acciones</th>
+          </tr>
+          </tfoot>
+          <tbody>
+          @foreach($pay as $pa)
+              <tr>
+                  <td>{{$pa->persona->user->nombre}} {{$pa->persona->user->apellido}}</td>
+                  <td>{{$pa->mes}}</td>
+                  <td>{{$pa->monto}}</td>
+                  <td>{{$pa->comentario}}</td>
+                  <td>
+                      <a href="#">edit</a>
+                      <a href="#">delete</a>
+                      <a href="#">view</a>
+                  </td>
+              </tr>
+          @endforeach
+          </tbody>
+      </table><!--------------------
+END - Table with actions
+------------------            --> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+@endsection

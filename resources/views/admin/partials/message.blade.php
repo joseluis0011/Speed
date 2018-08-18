@@ -8,8 +8,12 @@
     @if(Session::has('webpage_update'))
        Materialize.toast('{{Session::get('webpage_update')}}', 5000);
     @endif
-
-
+    @if(Session::has('cli_new'))
+       Materialize.toast('{{Session::get('cli_new')}}', 5000);
+    @endif
+  @if(Session::has('cli_new_error'))
+       Materialize.toast('{{Session::get('cli_new_error')}}', 5000);
+    @endif
 
     @if(Session::has('pago_success'))
        Materialize.toast('{{Session::get('pago_success')}}', 5000);

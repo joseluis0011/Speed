@@ -17,8 +17,9 @@ class PagosController extends Controller
 
     public function index()
   {
+      $cli = $this->repo_admin->listClienteByAdmin();
     $pay =  $this->repo_admin->listPagos();
-    return view('admin.pagos.index',compact('pay'));
+    return view('admin.pagos.index',compact('pay','cli'));
   }
   public function create()
   {

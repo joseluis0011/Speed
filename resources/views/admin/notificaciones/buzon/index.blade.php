@@ -18,7 +18,7 @@
 START - Controls Above Table-------------------->
                                   <div class="controls-above-table">
                                       <div class="row">
-                                          <div class="col-sm-6"><a class="btn btn-sm btn-secondary" href="#">Download
+                                          <div class="col-sm-6"><a class="btn btn-sm btn-secondary" href="#">Descargar
                                                   en Excel</a><a class="btn btn-sm btn-danger" href="#">Imprimir</a></div>
 
                                       </div>
@@ -52,19 +52,26 @@ START - Table with actions
                                       </tfoot>
                                       <tbody>
                                       @foreach($noti as $no)
-                                          <tr>
+                                          @if($no->view == 'no')
+                                              <tr style="background: #FEA47F;">
+                                          @else
+                                              <tr style="background: #9AECDB;">
+                                                  @endif
                                               <td>{{$no->nombre}}</td>
                                               <td>{{$no->apellido}}</td>
                                               <td>{{$no->telefono}}</td>
                                               <td>{{$no->direccion}}</td>
                                               <td>{{$no->plan}}</td>
                                               <td>{{$no->comentario}}</td>
-                                              <td class="row-actions">
-                                                  <a onclick="edit({{$no->idpersona}})" class="primary" href="#"><i class="os-icon os-icon-ui-49"></i></a>
-                                                  <a onclick="del({{$no->idpersona}},$(this))" class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
-                                              </td>
-                                          </tr>
-                                      @endforeach
+                                                  <td>
+                                                      @if($no->view == 'no')
+                                                          <a onclick="view('{{$no->idnotificaciones}}')" class="btn">view</a>
+                                                      @else
+                                                          <a   class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a>
+                                                      @endif
+                                                  </td>
+                                              </tr>
+                                              @endforeach
                                       </tbody>
                                   </table><!--------------------
 END - Table with actions

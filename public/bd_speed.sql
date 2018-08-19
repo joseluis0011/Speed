@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-02-2018 a las 16:09:39
+-- Tiempo de generación: 15-08-2018 a las 01:49:35
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.11
 
@@ -46,7 +46,33 @@ CREATE TABLE `buzon` (
 INSERT INTO `buzon` (`idbuzon`, `nombre`, `apellido`, `telefono`, `direccion`, `plan`, `comentario`, `idnotification`) VALUES
 (1, 'usuario web ', 'apellido', '99889989', 'nose 223 ', '30', '34534', 5),
 (6, 'Aldair', 'Meza Perales', '989898989', 'Dirección sin numero ñaña', '5', 'Deseo la instalacion del internet  deseo la mas rapida asitenacia tecnioa', 8),
-(7, 'Pable', 'Neruda Palacios', '9978798979', '7856t8g76f76f76f', '2', 'fgfnjgsgbh gjn uggu u g7 g7 8mh 8 9jff', 9);
+(7, 'Pable', 'Neruda Palacios', '9978798979', '7856t8g76f76f76f', '2', 'fgfnjgsgbh gjn uggu u g7 g7 8mh 8 9jff', 9),
+(8, 'asdasdsad', 'asdasd', '545435345345', 'sadasd', '6', '345erfgdfgdfgddfgd', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `config_tools`
+--
+
+CREATE TABLE `config_tools` (
+  `idconfig` int(11) NOT NULL,
+  `parameter` text NOT NULL,
+  `tools` varchar(200) NOT NULL,
+  `state` char(3) NOT NULL,
+  `value` varchar(300) DEFAULT NULL,
+  `iduser` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `config_tools`
+--
+
+INSERT INTO `config_tools` (`idconfig`, `parameter`, `tools`, `state`, `value`, `iduser`) VALUES
+(1, '\r\nlogical:physical', 'type_delete', '1', 'physical', NULL),
+(2, 'cnf-menu:conf-other:conf-topbar', 'customizer', '1', 'menu-w menu-has-selected-link selected-menu-color-light menu-activated-on-hover color-scheme-light color-style-default sub-menu-color-light menu-position-side menu-side-left menu-layout-compact sub-menu-style-flyout', 18),
+(4, 'false', 'customizer', '1', 'menu-w menu-has-selected-link selected-menu-color-light menu-activated-on-click color-scheme-light color-style-default sub-menu-color-light menu-position-side menu-side-left menu-layout-compact sub-menu-style-inside', 20),
+(5, 'false', 'customizer', '1', 'menu-w menu-has-selected-link selected-menu-color-light menu-activated-on-hover color-scheme-light color-style-default sub-menu-color-light menu-position-side menu-side-left menu-layout-mini sub-menu-style-over', 17);
 
 -- --------------------------------------------------------
 
@@ -69,11 +95,11 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`idnotificaciones`, `persona_idpersona`, `reclamo`, `comentario`, `view`, `typenoti`, `resp_admin`) VALUES
-(2, 4, 'E l internet esta un poco lento ', NULL, 'no', '2', ''),
-(4, 2, 'cambiar clave ', NULL, 'si', '1', ''),
+(2, 4, 'E l internet esta un poco lento ', NULL, 'si', '2', ''),
 (5, NULL, 'consulta de internet ', NULL, 'si', '3', ''),
 (8, NULL, 'Deseo la instalacion del internet  deseo la mas rapida asitenacia tecnioa', NULL, 'si', '3', NULL),
-(9, NULL, 'fgfnjgsgbh gjn uggu u g7 g7 8mh 8 9jff', NULL, 'no', '3', NULL);
+(9, NULL, 'fgfnjgsgbh gjn uggu u g7 g7 8mh 8 9jff', NULL, 'si', '3', NULL),
+(10, NULL, '345erfgdfgdfgddfgd', NULL, 'si', '3', NULL);
 
 -- --------------------------------------------------------
 
@@ -85,6 +111,8 @@ CREATE TABLE `pagos` (
   `idpagos` int(11) NOT NULL,
   `mes` varchar(45) DEFAULT NULL,
   `monto` varchar(45) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `comentario` varchar(45) DEFAULT NULL,
   `persona_idpersona` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -93,11 +121,13 @@ CREATE TABLE `pagos` (
 -- Volcado de datos para la tabla `pagos`
 --
 
-INSERT INTO `pagos` (`idpagos`, `mes`, `monto`, `comentario`, `persona_idpersona`) VALUES
-(1, '3', '3', 'pago del mes de Marzo adelantado', 4),
-(2, '4', '2', 'pago del mes de Abril', 3),
-(3, '5', '3', 'pago del mes de Mayo', 4),
-(4, '1', '2', 'el pago fue realizado', 6);
+INSERT INTO `pagos` (`idpagos`, `mes`, `monto`, `created_at`, `updated_at`, `comentario`, `persona_idpersona`) VALUES
+(1, '3', '35', '2018-04-24 16:03:21', NULL, 'pago del mes de Marzo adelantado', 4),
+(3, '5', '35', '2018-04-24 16:03:21', NULL, 'pago del mes de Mayo', 4),
+(4, '1', '25', '2018-04-24 16:03:21', NULL, 'el pago fue realizado', 6),
+(5, '3', '8', '2018-04-24 16:03:21', NULL, 'pago de la mensualidad de marzo', 2),
+(6, '12', '3', '2018-04-24 21:03:42', '2018-04-24 21:03:42', 'pago del mes de diciembre', 2),
+(7, '8', '6', '2018-04-25 02:25:17', '2018-04-25 02:25:17', 'efsdfsdfsf', 6);
 
 -- --------------------------------------------------------
 
@@ -144,24 +174,29 @@ CREATE TABLE `persona` (
   `usuario_idusuario` int(11) NOT NULL,
   `typeuser` varchar(45) DEFAULT NULL COMMENT '1 = admin  0 =  cliente',
   `idreferido` int(11) DEFAULT NULL,
-  `email` varchar(100) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `deleted_at` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `persona`
 --
 
-INSERT INTO `persona` (`idpersona`, `direccion`, `telefono`, `finicio`, `router`, `antena`, `tantena`, `plan`, `estado`, `usuario_idusuario`, `typeuser`, `idreferido`, `email`) VALUES
-(1, 'Huaycan 2222222', '22222222', '2018-02-12', '45555555', '555555', '55555555', '55555555', '1', 1, '1', 0, 'jytd5@jhn.com'),
-(2, 'Alameda 23323', '333333', '2018-02-12', '45555555', '555555', '55555555', '55555555', '1', 2, '0', 1, 'ggrs3@gmail.com'),
-(3, 'Desconosod 23 n4', '33333333', '2018-02-20', '3333333', '333333', '3333333', '333333', '1', 3, '0', 1, '2213@gmail.com'),
-(4, 'Alameda ñaña', '998999998', '2018-01-15', '192.34.43', '196.123.23', '1', '3', 'on', 4, '0', 1, 'hsdf@gmail.com'),
-(5, NULL, '9989989898', '2018-02-18', NULL, NULL, NULL, NULL, NULL, 5, '1', 1, 'sssy@gmail.com'),
-(6, 'Vitarte', '999998878', '2018-02-01', '192.134.23.234', '1988.2.321.2', '1', '2', 'on', 6, '0', 5, 'matias23@exmplae.com'),
-(8, 'bh76gc5sdcg7g', '324324234', '2018-02-06', '324324324', '234324324', '1', '1', 'on', 9, '0', 1, 'huamedfjhordy@gmail.com'),
-(9, '234324324', '234324', '2018-02-03', '234324324', '3243243', '1', '1', 'on', 10, '0', 5, '23234432342'),
-(10, '345345', '34534', '2018-02-08', '345345', '345345345', '1', '1', 'on', 11, '0', 5, '765445474'),
-(11, NULL, '658758673', '2018-02-20', NULL, NULL, NULL, NULL, NULL, 12, '1', 5, 'admin@gmail.com');
+INSERT INTO `persona` (`idpersona`, `direccion`, `telefono`, `finicio`, `router`, `antena`, `tantena`, `plan`, `estado`, `usuario_idusuario`, `typeuser`, `idreferido`, `email`, `deleted_at`) VALUES
+(0, NULL, '9989989898', '2018-02-18', NULL, NULL, NULL, NULL, 'on', 5, '1', NULL, 'sssy@gmail.com', '2018-02-28 16:56:34'),
+(2, 'Alameda 23323', '333333', '2018-04-03', '45555555', '555555', 'NanoLoco M5', 'Plan 25', 'on', 2, '0', 17, 'ggrs3@gmail.com', NULL),
+(3, 'Desconosod 23 n4', '33333333', '2018-02-20', '3333333', '333333', '3333333', '333333', 'on', 3, '0', 17, '2213@gmail.com', ''),
+(4, 'Alameda ñaña', '998999998', '2018-01-15', '192.34.43', '196.123.23', '1', '3', 'on', 4, '0', 17, 'hsdf@gmail.com', NULL),
+(6, 'Vitarte', '999998878', '2018-02-01', '192.134.23.234', '1988.2.321.2', '1', '2', 'on', 6, '0', 17, 'matias23@exmplae.com', NULL),
+(8, 'bh76gc5sdcg7g', '324324234', '2018-02-06', '324324324', '234324324', '1', '1', 'on', 9, '0', 17, 'huamedfjhordy@gmail.com', NULL),
+(9, '234324324', '234324', '2018-02-03', '234324324', '3243243', '1', '1', 'on', 10, '0', 17, '23234432342', NULL),
+(10, '345345', '34534', '2018-02-08', '345345', '345345345', '1', '1', 'on', 11, '0', 17, '765445474', NULL),
+(11, NULL, '658758673', '2018-02-28', NULL, NULL, NULL, NULL, 'on', 12, '1', NULL, 'admin@gmail.com', NULL),
+(12, NULL, '998958807', '2018-03-09', NULL, NULL, NULL, NULL, 'off', 13, '1', 17, 'huasssssy@gmail.com', NULL),
+(13, NULL, '998958807', '2018-02-28', NULL, NULL, NULL, NULL, 'on', 17, '1', NULL, 'husnjhordy@gmail.com', NULL),
+(14, NULL, '9987879', '2018-02-28', NULL, NULL, NULL, NULL, 'on', 18, '1', NULL, 'hshd@msms.com', NULL),
+(15, NULL, '998933807', '2018-02-28', NULL, NULL, NULL, NULL, 'off', 19, '1', NULL, 'hua23ordy@gmail.com', '2018-03-05 05:03:47'),
+(16, NULL, '998958806', '2018-04-21', NULL, NULL, NULL, NULL, 'on', 20, '1', 18, 'hurtadoy@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -182,8 +217,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `body`, `created_at`, `updated_at`) VALUES
-(1, 'home', '<div class=\"row\">\r\n<div class=\"col m4 s12\">\r\n<div class=\"card small\">\r\n<div class=\"card-image\"><img src=\"http://webonise.co.uk/images/philosophy.png\" /> My Philosophy</div>\r\n\r\n<div class=\"card-content\">\r\n<p>I always focusing on the performance and My goal is to create user-friendly and timeless websites that attract human eyes.</p>\r\n\r\n<p>Reading and trying out new ideas is how I have furthered my knowledge, keeping up to date with the latest technologies.</p>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"col m4 s12\">\r\n<div class=\"card small\">\r\n<div class=\"card-image\"><img src=\"http://webonise.co.uk/images/mission.jpg\" /> My Mission</div>\r\n\r\n<div class=\"card-content\">\r\n<p>I am highly motivated, enthusiastic and a very reliable developer with a &#39;can do&#39; attitude. I am always looking to increase my knowledge and learn new technologies and skills.</p>\r\n\r\n<p>I love developing cross-platform iOS and Android applications.</p>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"col m4 s12\">\r\n<div class=\"card small\">\r\n<div class=\"card-image\"><img src=\"http://webonise.co.uk/images/process.jpg\" /> My Process</div>\r\n\r\n<div class=\"card-content\">\r\n<p>When I undertake a project, I don&#39;t just complete it, I go the extra mile and make it better than requested.</p>\r\n\r\n<ul>\r\n	<li>Planning</li>\r\n	<li>Design</li>\r\n	<li>Data Architecture</li>\r\n	<li>Development</li>\r\n	<li>Launch &amp; Support</li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n</div>', '2018-02-01 05:00:00', '2018-02-20 09:54:50'),
-(2, '', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"1\">\r\n	<tbody>\r\n		<tr>\r\n			<td><a href=\"https://olo.com.pe/planes-y-servicios/paquetes-lte-a-la-medida\"><img alt=\"Paquetes LTE a la medida\" src=\"https://olo.com.pe/static/sprites/core/planes/lte-medida-active.png?v=3060a\" /></a>\r\n			<h4>Paquetes LTE<br />\r\n			a la medida</h4>\r\n			</td>\r\n			<td>\r\n			<h4><a href=\"https://olo.com.pe/planes-y-servicios/paquetes-lte-ilimitado\"><img alt=\"Paquetes LTE Ilimitado\" src=\"https://olo.com.pe/static/sprites/core/planes/lte.png?v=ce539\" /></a><br />\r\n			Paquetes LTE<br />\r\n			Ilimitado</h4>\r\n			</td>\r\n			<td>\r\n			<p><a href=\"https://olo.com.pe/planes-y-servicios/planes-wimax\"><img alt=\"Planes WiMax\" src=\"https://olo.com.pe/static/sprites/core/planes/otros.png?v=db32b\" /></a></p>\r\n\r\n			<h4>Planes<br />\r\n			WiMax</h4>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<h3>&nbsp;</h3>', NULL, '2018-02-20 09:52:37');
+(1, 'home', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"1\">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p>&nbsp;</p>\r\n\r\n			<p><img alt=\"Paquetes LTE a la medida\" src=\"https://olo.com.pe/static/sprites/core/planes/lte-medida-active.png?v=3060a\" /></p>\r\n\r\n			<h4>Paquetes LTE<br />\r\n			a la medida</h4>\r\n			</td>\r\n			<td>\r\n			<h4>&nbsp;</h4>\r\n\r\n			<h4><img alt=\"Paquetes LTE Ilimitado\" src=\"https://olo.com.pe/static/sprites/core/planes/lte.png?v=ce539\" /></h4>\r\n\r\n			<h4>Paquetes LTE<br />\r\n			Ilimitado</h4>\r\n			</td>\r\n			<td>\r\n			<p>&nbsp;</p>\r\n\r\n			<p><img alt=\"Planes WiMax\" src=\"https://olo.com.pe/static/sprites/core/planes/otros.png?v=db32b\" /></p>\r\n\r\n			<h4>Planes<br />\r\n			WiMax</h4>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '2018-02-01 05:00:00', '2018-02-21 02:38:27'),
+(2, '', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"1\">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p>&nbsp;</p>\r\n\r\n			<p><img alt=\"Paquetes LTE a la medida\" src=\"https://olo.com.pe/static/sprites/core/planes/lte-medida-active.png?v=3060a\" /></p>\r\n\r\n			<h4>Paquetes LTE<br />\r\n			a la medida</h4>\r\n			</td>\r\n			<td>\r\n			<h4>&nbsp;</h4>\r\n\r\n			<h4><img alt=\"Paquetes LTE Ilimitado\" src=\"https://olo.com.pe/static/sprites/core/planes/lte.png?v=ce539\" /></h4>\r\n\r\n			<h4>Paquetes LTE<br />\r\n			Ilimitado</h4>\r\n			</td>\r\n			<td>\r\n			<p>&nbsp;</p>\r\n\r\n			<p><img alt=\"Planes WiMax\" src=\"https://olo.com.pe/static/sprites/core/planes/otros.png?v=db32b\" /></p>\r\n\r\n			<h4>Planes<br />\r\n			WiMax</h4>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', NULL, '2018-02-20 20:27:39');
 
 -- --------------------------------------------------------
 
@@ -205,8 +240,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idusuario`, `dni`, `password`, `nombre`, `apellido`, `remember_token`) VALUES
-(1, '77058361', '$2y$10$HSXoWm549lSaeIz2w.VB2uxt/5G0W6D0wUq8823qq6zKI0e70mele', 'Jhordy', 'Huaman Ollero', 'QvSiXn8qjsAfgn6LPmly1Tb4XNmLICnuJAWPK10Z8SRxDSXsx1yT1yZxjvC4'),
-(2, '77777777', '$2y$10$4DhDUjn1PHT0xlj8DlPK3.YcAurDgEnLqHHZiZrdYPZQBvVlLgOSi', 'Juan ', 'Huartado Maotaro', 'lO8UzlEnKCb7EaKIKKk9GmZmONR8Kehy43WYqzAfyhex6Y7oBl7UK5ZfWQ9j'),
+(2, '77777777', '$2y$10$yLtNIuQqVtYjRPS.KuclJeUaLUnLDGwfP2mGU0uiLTK5N99PR8dRe', 'Juan', 'Huartado Maotaro', 'rAcWyFumDMeGhNoaRkAgp88b0tyDH2X2BwlUFHFxmpon0AWCItZN4KuPqdwF'),
 (3, '88888888', '13245678', 'Ramires', 'Solorzano aliaga', NULL),
 (4, '99999999', '$2y$10$BrWgrrmGORx4ssSW3.yqrO3DjpmKHL2tabO9OIX6BlYdxi4O5LMbq', 'Andres', 'Oloritga motolla', 'ekFfhEfwJy3sa04CD2nhrP7RbjIKgat9yLCfVa4979UK3wUROiw0DSa6xtNy'),
 (5, '11111111', '$2y$10$wMwrPQ7n/L/Zlo4mBVgqXufY0z264Owpjd2daNWVjHHwK6o38VnZC', 'Pedro', 'Montollas Aliaga', 'dT3EsJ5NT22eLYsmtLd8r7WBiQKklCxKBiLS6WPqm1Y8vIvGcqHa92WY5ku7'),
@@ -214,7 +248,12 @@ INSERT INTO `usuario` (`idusuario`, `dni`, `password`, `nombre`, `apellido`, `re
 (9, '345678765', '$2y$10$tuSLqLqsOMd3ldePL2.cR.6Tuy9ZjiaruetXPAobo35t4itawoAIu', 'miguek', 'arturo casas', NULL),
 (10, '324423423', '$2y$10$WCbWgFT2seWwmrX7.Uufa.VJI8z8SpsWYgO2N3y2rI9xxukBO4Vmi', 'sadas', 'asdsad', NULL),
 (11, '435345', '$2y$10$q1eFUkAIzUEMUC8Ecb0ROOqImv3n5OYXotPiXvWHrO.EPwi8LfEQy', 'ewdfwe', 'rewrewr', NULL),
-(12, '33333333', '$2y$10$cCIWkpLYCmIedmEcDl9tCuuNlNGlvVBsQIZEYaPh5TyboGpczUjoy', 'admin', 'admin', NULL);
+(12, '33333333', '$2y$10$TIkNEVVX2RzgjcsGui3ZqOZmCiMKBsJZHYplrDUNBv29IPLFrzfRC', 'qdddd', 'admin', 'bB3zErYNx4veH605Qw8JjClpAXqfE5pRuTNMYXYWTZLwJvo4xAWbWEQ7hjEW'),
+(13, '44444444', '$2y$10$UbZ/sXfXoffb7MAgbjoWk.Gs15ynzfR8hhRu6ngv3QszU7HOP4imC', 'Manuel', 'Arnolt Barzola', NULL),
+(17, '87654321', '$2y$10$XZ8l4hkg4s091HzoSAfYhu94r8PnGEvqOk7orycI0SaDj/rl1ahh6', 'Jhordy', 'Huaman Ollero', 'dFHizjSnUcmxgPJmPmXmXAThuNgBWIv96atxqLBdvJR1EpLgkptPtq8K0Jp0'),
+(18, '12345678', '$2y$10$yLtNIuQqVtYjRPS.KuclJeUaLUnLDGwfP2mGU0uiLTK5N99PR8dRe', 'Gerardo', 'Asencio Molina', NULL),
+(19, '87624321', '$2y$10$oING7i7brug4KcwnMppwZe1t5peq2/Kq3WeHRpqxmziwbdLJ5M7JG', 'Jhss', 'Huamssso', NULL),
+(20, '2222222', '$2y$10$yLtNIuQqVtYjRPS.KuclJeUaLUnLDGwfP2mGU0uiLTK5N99PR8dRe', 'Manuel', 'Hurtado', 'uX06fNvbeCCtkb3SZcivK0eZSqYOcVITYifn5POoQuvbD0LTHSTsriTiBsK4');
 
 --
 -- Índices para tablas volcadas
@@ -226,6 +265,13 @@ INSERT INTO `usuario` (`idusuario`, `dni`, `password`, `nombre`, `apellido`, `re
 ALTER TABLE `buzon`
   ADD PRIMARY KEY (`idbuzon`),
   ADD KEY `pf_noty_idx` (`idnotification`);
+
+--
+-- Indices de la tabla `config_tools`
+--
+ALTER TABLE `config_tools`
+  ADD PRIMARY KEY (`idconfig`),
+  ADD KEY `fk_user_conf_idx` (`iduser`);
 
 --
 -- Indices de la tabla `notificaciones`
@@ -252,7 +298,8 @@ ALTER TABLE `paquetes`
 --
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`idpersona`),
-  ADD KEY `fk_persona_usuario_idx` (`usuario_idusuario`);
+  ADD KEY `fk_persona_usuario_idx` (`usuario_idusuario`),
+  ADD KEY `fk_referido_id_idx` (`idreferido`);
 
 --
 -- Indices de la tabla `posts`
@@ -275,19 +322,25 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `buzon`
 --
 ALTER TABLE `buzon`
-  MODIFY `idbuzon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idbuzon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `config_tools`
+--
+ALTER TABLE `config_tools`
+  MODIFY `idconfig` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `idnotificaciones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idnotificaciones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `idpagos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idpagos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `paquetes`
@@ -299,7 +352,7 @@ ALTER TABLE `paquetes`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `idpersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idpersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `posts`
@@ -311,7 +364,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas
@@ -322,6 +375,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `buzon`
   ADD CONSTRAINT `pf_notify` FOREIGN KEY (`idnotification`) REFERENCES `notificaciones` (`idnotificaciones`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `config_tools`
+--
+ALTER TABLE `config_tools`
+  ADD CONSTRAINT `fk_user_conf` FOREIGN KEY (`iduser`) REFERENCES `usuario` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `notificaciones`
@@ -339,7 +398,8 @@ ALTER TABLE `pagos`
 -- Filtros para la tabla `persona`
 --
 ALTER TABLE `persona`
-  ADD CONSTRAINT `fk_persona_usuario` FOREIGN KEY (`usuario_idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_persona_usuario` FOREIGN KEY (`usuario_idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_referido_id` FOREIGN KEY (`idreferido`) REFERENCES `usuario` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
